@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'styles/style.css'%}">
+</head>
+<body>
+    <header class="header">
+        <div class="wrapper">
+           <div class="header_wrapper">
+               <div class="header_logo">
+                   <a href="/" class="header_logo-link">
+                       <img src="{% static 'img/svg/logo.svg'%}" alt="logo" class="header_logo-pic">
+                   </a>
+               </div>
+
+               <nav class="header_nav">
+                   <div class="header_block">
+                       <ul class="header_list">
+                           <li class="header_item">
+                               <div class="nav_wrapper">
+                                   <img src="{% static 'img/svg/icon_phone.svg'%}" alt="icon phone" class="icon_phone">
+                                   <a href="#!" class="header_link">+1-302-231-1880</a>
+                               </div>
+
+                           </li>
+                           <li class="header_item">
+                               <div class="nav_wrapper">
+                                   <img src="{% static 'img/svg/icon_message.svg'%}" alt="icon email" class="icon_email">
+                                   <a href="#!" class="header_link">jeff@jeffweber.net</a>
+                               </div>
+                           </li>
+                       </ul>
+                       <button class="header_button">Contact Jeff</button>
+                   </div>
+               </nav>
+           </div>
+        </div>
+    </header>
+</body>
+</html>
