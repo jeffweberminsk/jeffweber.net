@@ -15,7 +15,6 @@
                        <img src="{% static 'img/svg/logo.svg'%}" alt="logo" class="header_logo-pic">
                    </a>
                </div>
-
                <nav class="header_nav">
                    <div class="header_block">
                        <ul class="header_list">
@@ -43,10 +42,16 @@
     <main class="main">
         <section class="intro">
             <div class="wrapper">
-                <h1 class="intro_title">New Equipment</h1>
+                <form class="search-form">
+                    <div class="search_wrapper">
+                        <input type="text" class="search_input" value="Search for Equipment...">
+                        <div class="search_button">
+                            <img src="{% static 'img/svg/lupa.svg'%}" alt="" class="search_icon" >
+                        </div>
+                    </div>
+                </form>
             </div>
         </section>
     </main>
-
 </body>
 </html>
