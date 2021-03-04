@@ -32,13 +32,12 @@
                                </div>
                            </li>
                        </ul>
-                       <button class="header_button">Contact Jeff</button>
+                       <button class="btn" data-modal>Contact Jeff</button>
                    </div>
                </nav>
            </div>
         </div>
     </header>
-
     <main class="main">
         <section class="intro">
             <div class="wrapper">
@@ -802,7 +801,7 @@
                     <div class="footer_text_question_two">
                         <h1>If you have any questions, please contact us. We will be happy to answer your questions!</h1>
                     </div>
-                    <button class="footer_button">Contact Jeff</button>
+                    <button class="footer_button" data-modal >Contact Jeff</button>
                 </div>
             </div>
         </div>
@@ -816,5 +815,52 @@
             </div>
         </div>
     </footer>
+    <div class="modal">
+        <div class="modal__dialog">
+            <div class="modal__content">
+                <form action="#">
+                    <div class="modal__close" data-close> <img src="{% static 'img/svg/icon_cross.svg'%}" alt="icon_cross" class="icon_cross"></div>
+                    <div class="modal_block_content">
+                        <div class="modal_contact_jeff">
+                            <div class="modal__title_jeff_contact">Contact Jeff</div>
+                            <div class="modal__jeff_contact_comments">If you have any questions, please contact us. We will be happy to answer your questions!</div>
+                            <div class="modal__jeff_contact_phone">
+                                <img src="{% static 'img/svg/image_phone_modal.svg'%}" alt="image_phone_modal" class="image_phone_modal">
+                                <h1>+1-302-231-1880</h1>
+                            </div>
+                            <div class="modal__jeff_contact_mail">
+                                <img src="{% static 'img/svg/image_email_modal.svg'%}" alt="image_email_modal" class="image_email_modal">
+                                <h1>jeff@jeffweber.net</h1>
+                            </div>
+                            <div class="modal__jeff_contact_whatsapp">
+                                <img src="{% static 'img/svg/image_whatsapp_modal.svg'%}" alt="image_whatsapp_modal" class="image_whatsapp_modal">
+                                <h1>+375 44 494 4802</h1>
+                            </div>
+                            <div class="modal__jeff_contact_skype">
+                                <img src="{% static 'img/svg/image_skype_modal.svg'%}" alt="image_skype_modal" class="image_skype_modal">
+                                <h1>jeffreyweber</h1>
+                            </div>
+                            <div class="modal__jeff_contact_linksite">
+                                <img src="{% static 'img/svg/image_linksite_modal.svg'%}" alt="image_linksite_modal" class="image_linksite_modal">
+                                <h1>www.jeffweber.net</h1>
+                            </div>
+                            <div class="modal__jeff_contact_address"></div>
+                        </div>
+                        <div class="modal_message_jeff">
+                            <div class="modal__title">Message Jeff</div>
+                            <div class="modal__name">Your name</div>
+                            <input required placeholder="Enter your name..." name="name" type="text" class="modal__input">
+                            <div class="modal__mail">Your Email</div>
+                            <input required placeholder="Enter your Email..." name="email" type="email" class="modal__input">
+                            <div class="modal__message">Message</div>
+                            <input required placeholder="Type your message..." name="message" type="text" class="modal__input_message">
+                            <button class="btn">Message Jeff</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'js/script.js'%}"></script>
 </body>
 </html>
