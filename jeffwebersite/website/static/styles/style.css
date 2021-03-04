@@ -704,6 +704,69 @@ body{
     margin-top:45px;
 
 }
+.title_modal_ru_office{
+    font-size:24px;
+    font-weight:700;
+}
+.title_modal_ru_address_office{
+    font-size:12px;
+    font-weight:500;
+}
+.title_modal_us_office{
+    font-size:24px;
+    font-weight:700;
+}
+.title_modal_us_address_office{
+    font-size:12px;
+    font-weight:500;
+}
+.modal__jeff_contact_address{
+    display:flex;
+    margin:75px 0 0 60px;
+
+}
+.modal__jeff_contact_address > hr{
+    margin:43px 20px -10px 20px;
+}
+.modal_us_address_office{
+    display:flex;
+    margin-top:14px;
+    align-items:flex-start;
+}
+.modal_ru_address_office{
+    display:flex;
+    margin-top:14px;
+}
+
+.modal_us_phone_office{
+    display:flex;
+    margin-top:6px;
+}
+.modal_ru_address_office >h1{
+    font-weight:400;
+    font-size:12px;
+    margin:0 0 0 10px;
+}
+.modal_ru_phone_office >h1{
+    font-weight:400;
+    font-size:12px;
+    margin:0 0 0 10px;
+}
+.modal_ru_phone_office{
+    display:flex;
+    margin-top:6px;
+}
+.modal_us_address_office>h1{
+    font-weight:400;
+    font-size:12px;
+    width:135px;
+    margin:0 0 0 10px;
+}
+.modal_us_phone_office>h1{
+    font-weight:400;
+    font-size:12px;
+    margin:0 0 0 10px;
+}
 .modal__name{
     margin:30px 321px 12px 51px;
     font-size:14px;
