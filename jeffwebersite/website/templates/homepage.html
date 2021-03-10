@@ -3,15 +3,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>{% block title %}Title{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'styles/style.css'%}">
 </head>
 <body>
+    {% block header %}
     <header class="header">
         <div class="wrapper">
            <div class="header_wrapper">
                <div class="header_logo">
-                   <a href="/" class="header_logo-link">
+                   <a href="/jeffweber/homepage" class="header_logo-link">
                        <img src="{% static 'img/svg/logo.svg'%}" alt="logo" class="header_logo-pic">
                    </a>
                </div>
@@ -38,9 +39,11 @@
            </div>
         </div>
     </header>
+    {% endblock %}
     <main class="main">
         <section class="intro">
             <div class="wrapper">
+                {% block left %}
                 <div class="left_block">
                      <form class="search-form">
                         <div class="search_wrapper">
@@ -54,13 +57,13 @@
                         <div class="categories_wrapper">
                             <ul class="categories_items">
                                 <li class="categories_item">
-                                    <a href="#!" >Blocks & Swivels</a>
+                                    <a href="/jeffweber/blockswivels" >Blocks & Swivels</a>
                                 </li>
                                 <li class="categories_item">
-                                    <a href="#!" >BOP-Accumulators-Well Control</a>
+                                    <a href="/jeffweber/bopaccumulatorswellcontrol" >BOP-Accumulators-Well Control</a>
                                 </li>
                                 <li class="categories_item">
-                                    <a href="#!" >Casing Tubing Running</a>
+                                    <a href="/jeffweber/casingtubingrunning" >Casing Tubing Running</a>
                                 </li><li class="categories_item">
                                     <a href="#!" >Cementing</a>
                                 </li>
@@ -139,6 +142,8 @@
                         </div>
                     </form>
                 </div>
+                {% endblock %}
+                {% block right %}
                 <div class="right_block">
                     <div class="title_right_block">
                         <h1>New Equipment</h1>
@@ -179,13 +184,15 @@
                             </div>
                             <hr>
                             <div class="card_footer">
-                                <div class="card_price">175K USD</div>
-                                <div class="card_button"><img src="{% static 'img/svg/button_right_block.svg'%}" alt="#!" class="card_icon"></div>
+                                <div class="card_price">180K USD</div>
+                                    <a href="/jeffweber/product" class="card_button">
+                                        <img src="{% static 'img/svg/button_right_block.svg'%}" alt="#!" class="card_icon">
+                                    </a>
+                                 </div>
                             </div>
-                        </div>
-                         <div class="card">
+                        <div class="card">
                             <div class="card_image">
-                                <img src="{% static 'img/svg/picture.jpg'%}" alt="picture">
+                                <img src="{% static 'img/svg/picture1.jpg'%}" alt="picture">
                             </div>
                             <div class="card_descr">
                                 <div class="card_title">Stacked IDM-AC1600 Electric Drive Drawworks w/GE GEB28A1</div>
@@ -218,13 +225,15 @@
                             </div>
                             <hr>
                             <div class="card_footer">
-                                <div class="card_price">175K USD</div>
-                                <div class="card_button"><img src="{% static 'img/svg/button_right_block.svg'%}" alt="#!" class="card_icon"></div>
+                                <div class="card_price">220K USD</div>
+                                <a href="/jeffweber/product1" class="card_button">
+                                        <img src="{% static 'img/svg/button_right_block.svg'%}" alt="#!" class="card_icon">
+                                </a>
                             </div>
                         </div>
                          <div class="card">
                             <div class="card_image">
-                                <img src="{% static 'img/svg/picture.jpg'%}" alt="picture">
+                                <img src="{% static 'img/svg/picture2.jpg'%}" alt="picture">
                             </div>
                             <div class="card_descr">
                                 <div class="card_title">Stacked IDM-AC1600 Electric Drive Drawworks w/GE GEB28A1</div>
@@ -257,13 +266,15 @@
                             </div>
                             <hr>
                             <div class="card_footer">
-                                <div class="card_price">175K USD</div>
-                                <div class="card_button"><img src="{% static 'img/svg/button_right_block.svg'%}" alt="#!" class="card_icon"></div>
+                                <div class="card_price">200K USD</div>
+                                <a href="/jeffweber/product2" class="card_button">
+                                        <img src="{% static 'img/svg/button_right_block.svg'%}" alt="#!" class="card_icon">
+                                </a>
                             </div>
                         </div>
                          <div class="card">
                             <div class="card_image">
-                                <img src="{% static 'img/svg/picture.jpg'%}" alt="picture">
+                                <img src="{% static 'img/svg/picture3.jpg'%}" alt="picture">
                             </div>
                             <div class="card_descr">
                                 <div class="card_title">Stacked IDM-AC1600 Electric Drive Drawworks w/GE GEB28A1</div>
@@ -296,13 +307,15 @@
                             </div>
                             <hr>
                             <div class="card_footer">
-                                <div class="card_price">175K USD</div>
-                                <div class="card_button"><img src="{% static 'img/svg/button_right_block.svg'%}" alt="#!" class="card_icon"></div>
+                                <div class="card_price">210K USD</div>
+                                <a href="/jeffweber/product3" class="card_button">
+                                        <img src="{% static 'img/svg/button_right_block.svg'%}" alt="#!" class="card_icon">
+                                </a>
                             </div>
                         </div>
                          <div class="card">
                             <div class="card_image">
-                                <img src="{% static 'img/svg/picture.jpg'%}" alt="picture">
+                                <img src="{% static 'img/svg/picture4.jpg'%}" alt="picture">
                             </div>
                             <div class="card_descr">
                                 <div class="card_title">Stacked IDM-AC1600 Electric Drive Drawworks w/GE GEB28A1</div>
@@ -335,13 +348,15 @@
                             </div>
                             <hr>
                             <div class="card_footer">
-                                <div class="card_price">175K USD</div>
-                                <div class="card_button"><img src="{% static 'img/svg/button_right_block.svg'%}" alt="#!" class="card_icon"></div>
+                                <div class="card_price">230K USD</div>
+                                <a href="/jeffweber/product4" class="card_button">
+                                    <img src="{% static 'img/svg/button_right_block.svg'%}" alt="#!" class="card_icon">
+                                </a>
                             </div>
                         </div>
                          <div class="card">
                             <div class="card_image">
-                                <img src="{% static 'img/svg/picture.jpg'%}" alt="picture">
+                                <img src="{% static 'img/svg/picture5.jpg'%}" alt="picture">
                             </div>
                             <div class="card_descr">
                                 <div class="card_title">Stacked IDM-AC1600 Electric Drive Drawworks w/GE GEB28A1</div>
@@ -374,13 +389,15 @@
                             </div>
                             <hr>
                             <div class="card_footer">
-                                <div class="card_price">175K USD</div>
-                                <div class="card_button"><img src="{% static 'img/svg/button_right_block.svg'%}" alt="#!" class="card_icon"></div>
+                                <div class="card_price">120K USD</div>
+                                <a href="/jeffweber/product5" class="card_button">
+                                    <img src="{% static 'img/svg/button_right_block.svg'%}" alt="#!" class="card_icon">
+                                </a>
                             </div>
                         </div>
                          <div class="card">
                             <div class="card_image">
-                                <img src="{% static 'img/svg/picture.jpg'%}" alt="picture">
+                                <img src="{% static 'img/svg/picture6.jpg'%}" alt="picture">
                             </div>
                             <div class="card_descr">
                                 <div class="card_title">Stacked IDM-AC1600 Electric Drive Drawworks w/GE GEB28A1</div>
@@ -413,13 +430,13 @@
                             </div>
                             <hr>
                             <div class="card_footer">
-                                <div class="card_price">175K USD</div>
+                                <div class="card_price">130K USD</div>
                                 <div class="card_button"><img src="{% static 'img/svg/button_right_block.svg'%}" alt="#!" class="card_icon"></div>
                             </div>
                         </div>
                          <div class="card">
                             <div class="card_image">
-                                <img src="{% static 'img/svg/picture.jpg'%}" alt="picture">
+                                <img src="{% static 'img/svg/picture7.jpg'%}" alt="picture">
                             </div>
                             <div class="card_descr">
                                 <div class="card_title">Stacked IDM-AC1600 Electric Drive Drawworks w/GE GEB28A1</div>
@@ -452,13 +469,13 @@
                             </div>
                             <hr>
                             <div class="card_footer">
-                                <div class="card_price">175K USD</div>
+                                <div class="card_price">211K USD</div>
                                 <div class="card_button"><img src="{% static 'img/svg/button_right_block.svg'%}" alt="#!" class="card_icon"></div>
                             </div>
                         </div>
                          <div class="card">
                             <div class="card_image">
-                                <img src="{% static 'img/svg/picture.jpg'%}" alt="picture">
+                                <img src="{% static 'img/svg/picture8.jpg'%}" alt="picture">
                             </div>
                             <div class="card_descr">
                                 <div class="card_title">Stacked IDM-AC1600 Electric Drive Drawworks w/GE GEB28A1</div>
@@ -491,13 +508,13 @@
                             </div>
                             <hr>
                             <div class="card_footer">
-                                <div class="card_price">175K USD</div>
+                                <div class="card_price">200K USD</div>
                                 <div class="card_button"><img src="{% static 'img/svg/button_right_block.svg'%}" alt="#!" class="card_icon"></div>
                             </div>
                         </div>
                          <div class="card">
                             <div class="card_image">
-                                <img src="{% static 'img/svg/picture.jpg'%}" alt="picture">
+                                <img src="{% static 'img/svg/picture9.jpg'%}" alt="picture">
                             </div>
                             <div class="card_descr">
                                 <div class="card_title">Stacked IDM-AC1600 Electric Drive Drawworks w/GE GEB28A1</div>
@@ -530,13 +547,13 @@
                             </div>
                             <hr>
                             <div class="card_footer">
-                                <div class="card_price">175K USD</div>
+                                <div class="card_price">100K USD</div>
                                 <div class="card_button"><img src="{% static 'img/svg/button_right_block.svg'%}" alt="#!" class="card_icon"></div>
                             </div>
                         </div>
                          <div class="card">
                             <div class="card_image">
-                                <img src="{% static 'img/svg/picture.jpg'%}" alt="picture">
+                                <img src="{% static 'img/svg/picture10.jpg'%}" alt="picture">
                             </div>
                             <div class="card_descr">
                                 <div class="card_title">Stacked IDM-AC1600 Electric Drive Drawworks w/GE GEB28A1</div>
@@ -569,13 +586,13 @@
                             </div>
                             <hr>
                             <div class="card_footer">
-                                <div class="card_price">175K USD</div>
+                                <div class="card_price">180K USD</div>
                                 <div class="card_button"><img src="{% static 'img/svg/button_right_block.svg'%}" alt="#!" class="card_icon"></div>
                             </div>
                         </div>
                          <div class="card">
                             <div class="card_image">
-                                <img src="{% static 'img/svg/picture.jpg'%}" alt="picture">
+                                <img src="{% static 'img/svg/picture11.jpg'%}" alt="picture">
                             </div>
                             <div class="card_descr">
                                 <div class="card_title">Stacked IDM-AC1600 Electric Drive Drawworks w/GE GEB28A1</div>
@@ -608,13 +625,13 @@
                             </div>
                             <hr>
                             <div class="card_footer">
-                                <div class="card_price">175K USD</div>
+                                <div class="card_price">200K USD</div>
                                 <div class="card_button"><img src="{% static 'img/svg/button_right_block.svg'%}" alt="#!" class="card_icon"></div>
                             </div>
                         </div>
                         <div class="card">
                             <div class="card_image">
-                                <img src="{% static 'img/svg/picture.jpg'%}" alt="picture">
+                                <img src="{% static 'img/svg/picture12.jpg'%}" alt="picture">
                             </div>
                             <div class="card_descr">
                                 <div class="card_title">Stacked IDM-AC1600 Electric Drive Drawworks w/GE GEB28A1</div>
@@ -647,13 +664,13 @@
                             </div>
                             <hr>
                             <div class="card_footer">
-                                <div class="card_price">175K USD</div>
+                                <div class="card_price">225K USD</div>
                                 <div class="card_button"><img src="{% static 'img/svg/button_right_block.svg'%}" alt="#!" class="card_icon"></div>
                             </div>
                         </div>
                         <div class="card">
                             <div class="card_image">
-                                <img src="{% static 'img/svg/picture.jpg'%}" alt="picture">
+                                <img src="{% static 'img/svg/picture13.jpg'%}" alt="picture">
                             </div>
                             <div class="card_descr">
                                 <div class="card_title">Stacked IDM-AC1600 Electric Drive Drawworks w/GE GEB28A1</div>
@@ -686,13 +703,13 @@
                             </div>
                             <hr>
                             <div class="card_footer">
-                                <div class="card_price">175K USD</div>
+                                <div class="card_price">170K USD</div>
                                 <div class="card_button"><img src="{% static 'img/svg/button_right_block.svg'%}" alt="#!" class="card_icon"></div>
                             </div>
                         </div>
                         <div class="card">
                             <div class="card_image">
-                                <img src="{% static 'img/svg/picture.jpg'%}" alt="picture">
+                                <img src="{% static 'img/svg/picture14.jpg'%}" alt="picture">
                             </div>
                             <div class="card_descr">
                                 <div class="card_title">Stacked IDM-AC1600 Electric Drive Drawworks w/GE GEB28A1</div>
@@ -725,7 +742,7 @@
                             </div>
                             <hr>
                             <div class="card_footer">
-                                <div class="card_price">175K USD</div>
+                                <div class="card_price">165K USD</div>
                                 <div class="card_button"><img src="{% static 'img/svg/button_right_block.svg'%}" alt="#!" class="card_icon"></div>
                             </div>
                         </div>
@@ -734,9 +751,11 @@
                         <a href="#!" >Show More</a>
                     </div>
                 </div>
+                {% endblock %}
             </div>
         </section>
     </main>
+    {% block footer %}
     <footer class="footer">
         <div class="footer_up">
             <div class="wrapper">
@@ -810,15 +829,16 @@
                 <div class="footer_wrapper">
                     <div class="title_left_footer"><h1>© Weber Systems Inc. 2021</h1></div>
                     <div class="designer"><h1>Designer Yulija Aryka</h1></div>
-                    <div class="programmes"><h1>Programmers Andrey Bazylevich / Maxim Dubovik</h1></div>
+                    <div class="programmes"><h1>Programmers Andrey Bazylevich </h1></div>
                 </div>
             </div>
         </div>
     </footer>
+    {% endblock %}
     <div class="modal">
         <div class="modal__dialog">
             <div class="modal__content">
-                <form action="#">
+                <form action="mailto:bazylevich2000@mail.ru" method="post" enctype="text/plain">
                     <div class="modal__close" data-close> <img src="{% static 'img/svg/icon_cross.svg'%}" alt="icon_cross" class="icon_cross"></div>
                     <div class="modal_block_content">
                         <div class="modal_contact_jeff">
