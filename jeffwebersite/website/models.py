@@ -6,6 +6,9 @@ from django.db import models
 class Category (models.Model):
     name = models.TextField(max_length=1000)
 
+    def __str__(self):
+        return self.name
+
 
 class Product (models.Model):
     CHOISE_GENRE = (
@@ -20,5 +23,8 @@ class Product (models.Model):
     data_posted = models.DateField(auto_now=False)
     price = models.TextField(max_length=50)
     description = models.TextField(max_length=10000)
+
+    def __str__(self):
+        return self.product_title
 
 
