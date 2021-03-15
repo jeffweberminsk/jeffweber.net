@@ -1,19 +1,34 @@
 from django.contrib import admin
-from . import models
 
+from .models import *
 
-admin.site.register(models.Product)
+admin.site.register(Category)
+admin.site.register(BlockSwivels)
+admin.site.register(BopAccumulatorsWellControl)
+admin.site.register(CasingTubingRunning)
+admin.site.register(Cementing)
+admin.site.register(CoilTubing)
+admin.site.register(Compressor)
+admin.site.register(DrillString)
+admin.site.register(DrillingRig)
+admin.site.register(EnginesGensetsSCR)
+admin.site.register(FishingTool)
+admin.site.register(Flowback)
+admin.site.register(Frac)
+admin.site.register(HandlingTool)
+admin.site.register(Manifold)
+admin.site.register(Miscellaneou)
+admin.site.register(MudPumpsConditioning)
+admin.site.register(Nitrogen)
+admin.site.register(OCTG)
+admin.site.register(Offshore)
+admin.site.register(Pumps)
+admin.site.register(Slickline)
+admin.site.register(Snubbing)
+admin.site.register(Subsea)
+admin.site.register(TopDrive)
+admin.site.register(ThruTubing)
+admin.site.register(WellServiceWorkover)
+admin.site.register(WellTest)
+admin.site.register(Wireline)
 
-
-
-class CategoryAdmin(admin.ModelAdmin):
-    list_display = [field.name for field in models.Category._meta.fields]
-    search_fields = [field.name for field in models.Category._meta.fields]
-    list_filter = ['name']
-    class Meta:
-        model = models.Category
-
-
-
-
-admin.site.register(models.Category,CategoryAdmin)
