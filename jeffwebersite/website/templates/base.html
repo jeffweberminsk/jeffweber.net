@@ -1,0 +1,358 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Title{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'styles/style.css'%}">
+</head>
+<body>
+    {% block header %}
+    <header class="header">
+        <div class="wrapper">
+           <div class="header_wrapper">
+               <div class="header_logo">
+                   <a href="/jeffweber/homepage" class="header_logo-link">
+                       <img src="{% static 'img/svg/logo.svg'%}" alt="logo" class="header_logo-pic">
+                   </a>
+               </div>
+               <nav class="header_nav">
+                   <div class="header_block">
+                       <ul class="header_list">
+                           <li class="header_item">
+                               <div class="nav_wrapper">
+                                   <img src="{% static 'img/svg/icon_phone.svg'%}" alt="icon phone" class="icon_phone">
+                                   <a href="#!" class="header_link">+1-302-231-1880</a>
+                               </div>
+
+                           </li>
+                           <li class="header_item">
+                               <div class="nav_wrapper">
+                                   <img src="{% static 'img/svg/icon_message.svg'%}" alt="icon email" class="icon_email">
+                                   <a href="#!" class="header_link">jeff@jeffweber.net</a>
+                               </div>
+                           </li>
+                       </ul>
+                       <button class="btn" data-modal>Contact Jeff</button>
+                   </div>
+               </nav>
+           </div>
+        </div>
+    </header>
+    {% endblock %}
+    <main class="main">
+        <section class="intro">
+            <div class="wrapper">
+                {% block left %}
+                <div class="left_block">
+                     <form class="search-form">
+                        <div class="search_wrapper">
+                            <input type="text" class="search_input" value="Search for Equipment...">
+                            <div class="search_button">
+                                <img src="{% static 'img/svg/lupa.svg'%}" alt="" class="search_icon" >
+                            </div>
+                        </div>
+                    </form>
+                    <form class="categories-form">
+                        <div class="categories_wrapper">
+                            <ul class="categories_items">
+                                <li class="categories_item">
+                                    <a href="" >Blocks & Swivels</a>
+                                </li>
+                                <li class="categories_item">
+                                    <a href="" >BOP-Accumulators-Well Control</a>
+                                </li>
+                                <li class="categories_item">
+                                    <a href="" >Casing Tubing Running</a>
+                                </li><li class="categories_item">
+                                    <a href="#!" >Cementing</a>
+                                </li>
+                                <li class="categories_item">
+                                    <a href="#!" >Coil Tubing</a>
+                                </li>
+                                <li class="categories_item">
+                                    <a href="#!" >Compressors</a>
+                                </li><li class="categories_item">
+                                    <a href="#!" >Drill String</a>
+                                </li>
+                                <li class="categories_item">
+                                    <a href="#!" >Drilling Rigs</a>
+                                </li>
+                                <li class="categories_item">
+                                    <a href="#!" >Engines-Gensets-SCR</a>
+                                </li>
+                                <li class="categories_item">
+                                    <a href="#!" >Fishing Tools</a>
+                                </li>
+                                <li class="categories_item">
+                                    <a href="#!" >Flowback</a>
+                                </li>
+                                <li class="categories_item">
+                                    <a href="#!" >Frac</a>
+                                </li>
+                                <li class="categories_item">
+                                    <a href="#!" >Handling Tools</a>
+                                </li>
+                                <li class="categories_item">
+                                    <a href="#!" >Manifolds</a>
+                                </li>
+                                <li class="categories_item">
+                                    <a href="#!" >Miscellaneous</a>
+                                </li>
+                                <li class="categories_item">
+                                    <a href="#!" >Mud Pumps-Conditioning</a>
+                                </li>
+                                <li class="categories_item">
+                                    <a href="#!" >Nitrogen</a>
+                                </li>
+                                <li class="categories_item">
+                                    <a href="#!" >OCTG</a>
+                                </li>
+                                <li class="categories_item">
+                                    <a href="#!" >Offshore</a>
+                                </li>
+                                <li class="categories_item">
+                                    <a href="#!" >Pumps</a>
+                                </li>
+                                <li class="categories_item">
+                                    <a href="#!" >Slickline</a>
+                                </li>
+                                <li class="categories_item">
+                                    <a href="#!" >Snubbing</a>
+                                </li>
+                                <li class="categories_item">
+                                    <a href="#!" >Subsea</a>
+                                </li>
+                                <li class="categories_item">
+                                    <a href="#!" >Top Drives</a>
+                                </li>
+                                <li class="categories_item">
+                                    <a href="#!" >Thru Tubing</a>
+                                </li>
+                                <li class="categories_item">
+                                    <a href="#!" >Well Service-Workover</a>
+                                </li>
+                                <li class="categories_item">
+                                    <a href="#!" >Well Test</a>
+                                </li>
+                                <li class="categories_item">
+                                    <a href="#!" >Wireline</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </form>
+                </div>
+                {% endblock %}
+                {% block right %}
+                <div class="right_block">
+                    <div class="title_right_block">
+                        <h1>New Equipment</h1>
+                    </div>
+                    <div class="right_wrapper">
+                        <div class="card">
+                            <div class="card_image">
+                                <img src="{% static 'img/svg/picture.jpg'%}" alt="picture">
+                            </div>
+                            <div class="card_descr">
+                                <div class="card_title">Stacked IDM-AC1600 Electric Drive Drawworks w/GE GEB28A1</div>
+                                <div class="card_subtitle">
+                                    <div class="title_category">
+                                        <h1>Сategory:</h1>
+                                        <li class="category_value">
+                                            <a href="#!" >Drill String</a>
+                                        </li>
+                                    </div>
+                                    <div class="title_condition">
+                                        <h1>Condition:</h1>
+                                        <li class="condition_value">
+                                            <a href="#!" >Used</a>
+                                        </li>
+                                    </div>
+                                    <div class="title_location">
+                                        <h1>Location:</h1>
+                                        <li class="location_value">
+                                            <a href="#!" >USA</a>
+                                        </li>
+                                    </div>
+                                    <div class="title_date">
+                                        <h1>Date Posted:</h1>
+                                        <li class="date_value">
+                                            <a href="#!" >Feb.2021</a>
+                                        </li>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="card_footer">
+                                <div class="card_price">180K USD</div>
+                                {% block card_footer %}
+                                    <a href="/jeffweber/product" class="card_button">
+                                        <img src="{% static 'img/svg/button_right_block.svg'%}" alt="#!" class="card_icon">
+                                    </a>
+                                {% endblock %}
+                                </div>
+                            </div>
+                    </div>
+                    <div class="show_more">
+                        <a href="#!" >Show More</a>
+                    </div>
+                </div>
+                {% endblock %}
+            </div>
+        </section>
+    </main>
+    {% block footer %}
+    <footer class="footer">
+        <div class="footer_up">
+            <div class="wrapper">
+                <div class="footer_up_left">
+                    <div class="logo_footer_left">
+                       <a href="/" class="footer_logo-link">
+                           <img src="{% static 'img/svg/logo.svg'%}" alt="logo" class="footer_logo-pic">
+                       </a>
+                    </div>
+                    <div class="footer_logo_text">
+                        <h1>Weber Systems Inc. is in no way affiliated with any of the any companies referenced in this web site. Any references and or mention of company names in this web site or the accompanying computer code are for identification purposes only and are not Trade Marks or Trade Names used by or affiliated with Weber Systems Inc.</h1>
+                    </div>
+                </div>
+                <hr>
+                <div class="contact_centre_footer">
+                    <div class="office_footer">
+                        <div class="us_centre_footer">
+                            <h1>US office:</h1>
+                        </div>
+                        <div class="ru_centre_footer">
+                            <h1>RU office:</h1>
+                        </div>
+                        <div class="us_title_centre_footer">
+                            <h1>Weber Systems Inc.</h1>
+                        </div>
+                        <div class="ru_title_centre_footer">
+                            <h1>OOO “Kontakti”</h1>
+                        </div>
+                    </div>
+                    <div class="contact_footer">
+                        <div class="us_address_footer">
+                            <div class="address_us_wrapper">
+                                <img src="{% static 'img/svg/icon_location.svg'%}" alt="icon_location" class="icon_location">
+                                <h1>2358 So. Patterson Blvd. Unit 9 Dayton OH 45409</h1>
+                            </div>
+                        </div>
+                        <div class="blr_address_footer">
+                            <div class="address_blr_wrapper">
+                                <img src="{% static 'img/svg/icon_location.svg'%}" alt="icon_location" class="icon_location">
+                                <h1>Minsk, Belarus</h1>
+                            </div>
+                        </div>
+                        <div class="phone_us_footer">
+                            <div class="phone_us_wrapper">
+                                <img src="{% static 'img/svg/icon_phone_small.svg'%}" alt="icon_phone_small" class="icon_phone_small">
+                                <h1>+1-302-231-1880</h1>
+                            </div>
+                        </div>
+                        <div class="phone_blr_footer">
+                            <div class="phone_blr_wrapper">
+                                <img src="{% static 'img/svg/icon_phone_small.svg'%}" alt="icon_phone_small" class="icon_phone_small">
+                                <h1>+375 (29) 118-37-04</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="footer_contact_jeff">
+                    <div class="footer_text_question">
+                        <h1>Do you have a question?</h1>
+                    </div>
+                    <div class="footer_text_question_two">
+                        <h1>If you have any questions, please contact us. We will be happy to answer your questions!</h1>
+                    </div>
+                    <button class="footer_button" data-modal >Contact Jeff</button>
+                </div>
+            </div>
+        </div>
+        <div class="footer_down">
+            <div class="wrapper">
+                <div class="footer_wrapper">
+                    <div class="title_left_footer"><h1>© Weber Systems Inc. 2021</h1></div>
+                    <div class="designer"><h1>Designer Yulija Aryka</h1></div>
+                    <div class="programmes"><h1>Programmers Andrey Bazylevich </h1></div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    {% endblock %}
+    <div class="modal">
+        <div class="modal__dialog">
+            <div class="modal__content">
+                <form action="mailto:bazylevich2000@mail.ru" method="post" enctype="text/plain">
+                    <div class="modal__close" data-close> <img src="{% static 'img/svg/icon_cross.svg'%}" alt="icon_cross" class="icon_cross"></div>
+                    <div class="modal_block_content">
+                        <div class="modal_contact_jeff">
+                            <div class="modal__title_jeff_contact">Contact Jeff</div>
+                            <div class="modal__jeff_contact_comments">If you have any questions, please contact us. We will be happy to answer your questions!</div>
+                            <div class="modal__jeff_contact_phone">
+                                <img src="{% static 'img/svg/image_phone_modal.svg'%}" alt="image_phone_modal" class="image_phone_modal">
+                                <h1>+1-302-231-1880</h1>
+                            </div>
+                            <div class="modal__jeff_contact_mail">
+                                <img src="{% static 'img/svg/image_email_modal.svg'%}" alt="image_email_modal" class="image_email_modal">
+                                <h1>jeff@jeffweber.net</h1>
+                            </div>
+                            <div class="modal__jeff_contact_whatsapp">
+                                <img src="{% static 'img/svg/image_whatsapp_modal.svg'%}" alt="image_whatsapp_modal" class="image_whatsapp_modal">
+                                <h1>+375 44 494 4802</h1>
+                            </div>
+                            <div class="modal__jeff_contact_skype">
+                                <img src="{% static 'img/svg/image_skype_modal.svg'%}" alt="image_skype_modal" class="image_skype_modal">
+                                <h1>jeffreyweber</h1>
+                            </div>
+                            <div class="modal__jeff_contact_linksite">
+                                <img src="{% static 'img/svg/image_linksite_modal.svg'%}" alt="image_linksite_modal" class="image_linksite_modal">
+                                <h1>www.jeffweber.net</h1>
+                            </div>
+                            <div class="modal__jeff_contact_address">
+                                <div class="modal_ru_office">
+                                    <div class="title_modal_ru_office">RU office:</div>
+                                    <div class="title_modal_ru_address_office">OOO “Kontakti”</div>
+                                    <div class="modal_ru_address_office">
+                                        <img src="{% static 'img/svg/image_location_modal.svg'%}" alt="image_phone_modal_footer" class="image_phone_modal_footer">
+                                         <h1>Minsk, Belarus</h1>
+                                    </div>
+                                    <div class="modal_ru_phone_office">
+                                        <img src="{% static 'img/svg/image_phone_modal_footer.svg'%}" alt="image_location_modal" class="image_location_modal">
+                                        <h1>+375 (29) 118-37-04</h1>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="modal_us_office">
+                                    <div class="title_modal_us_office">US office:</div>
+                                    <div class="title_modal_us_address_office">Weber Systems Inc.</div>
+                                    <div class="modal_us_address_office">
+                                        <img src="{% static 'img/svg/image_location_modal.svg'%}" alt="image_phone_modal_footer" class="image_phone_modal_footer">
+                                        <h1>2358 So. Patterson Blvd. Unit 9 Dayton OH 45409</h1>
+                                    </div>
+                                    <div class="modal_us_phone_office">
+                                        <img src="{% static 'img/svg/image_phone_modal_footer.svg'%}" alt="image_location_modal" class="image_location_modal">
+                                        <h1>+1-302-231-1880</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal_message_jeff">
+                            <div class="modal__title">Message Jeff</div>
+                            <div class="modal__name">Your name</div>
+                            <input required placeholder="Enter your name..." name="name" type="text" class="modal__input">
+                            <div class="modal__mail">Your Email</div>
+                            <input required placeholder="Enter your Email..." name="email" type="email" class="modal__input">
+                            <div class="modal__message">Message</div>
+                            <input required placeholder="Type your message..." name="message" type="text" class="modal__input_message">
+                            <button class="btn">Message Jeff</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'js/script.js'%}"></script>
+</body>
+</html>
