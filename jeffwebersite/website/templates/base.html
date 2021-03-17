@@ -1,18 +1,20 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+{% block head %}
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}Title{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'styles/style.css'%}">
 </head>
+{% endblock %}
 <body>
     {% block header %}
     <header class="header">
         <div class="wrapper">
            <div class="header_wrapper">
                <div class="header_logo">
-                   <a href="/jeffweber/homepage" class="header_logo-link">
+                   <a href="/jeffweber/base" class="header_logo-link">
                        <img src="{% static 'img/svg/logo.svg'%}" alt="logo" class="header_logo-pic">
                    </a>
                </div>
@@ -154,42 +156,40 @@
                                 <img src="{% static 'img/svg/picture.jpg'%}" alt="picture">
                             </div>
                             <div class="card_descr">
-                                <div class="card_title">Stacked IDM-AC1600 Electric Drive Drawworks w/GE GEB28A1</div>
+                                <div class="card_title">{{ product.title }}</div>
                                 <div class="card_subtitle">
                                     <div class="title_category">
                                         <h1>Сategory:</h1>
                                         <li class="category_value">
-                                            <a href="#!" >Drill String</a>
+                                            <a href="#!" >{{ product.category.name }}</a>
                                         </li>
                                     </div>
                                     <div class="title_condition">
                                         <h1>Condition:</h1>
                                         <li class="condition_value">
-                                            <a href="#!" >Used</a>
+                                            <a href="#!" >{{ product.condition }}</a>
                                         </li>
                                     </div>
                                     <div class="title_location">
                                         <h1>Location:</h1>
                                         <li class="location_value">
-                                            <a href="#!" >USA</a>
+                                            <a href="#!" >{{ product.location }}</a>
                                         </li>
                                     </div>
                                     <div class="title_date">
                                         <h1>Date Posted:</h1>
                                         <li class="date_value">
-                                            <a href="#!" >Feb.2021</a>
+                                            <a href="#!" >{{ product.data_posted }}</a>
                                         </li>
                                     </div>
                                 </div>
                             </div>
                             <hr>
                             <div class="card_footer">
-                                <div class="card_price">180K USD</div>
-                                {% block card_footer %}
+                                <div class="card_price">{{ product.price }}K USD</div>
                                     <a href="/jeffweber/product" class="card_button">
                                         <img src="{% static 'img/svg/button_right_block.svg'%}" alt="#!" class="card_icon">
                                     </a>
-                                {% endblock %}
                                 </div>
                             </div>
                     </div>
