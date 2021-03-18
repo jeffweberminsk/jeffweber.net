@@ -1,15 +1,12 @@
 {% extends 'base.html' %}
 {% load static %}
-
 {% block right %}
- <div class="right_block">
-     <nav aria-label="breadcrumb">
-         <ol class="breadcrumb">
-             <li class="breadcrumb-item"><a href="#">Home</a></li>
-             <li class="breadcrumb-item"><a href="#">Category</a></li>
-             <li class="breadcrumb-item active" aria-current="page">Product</li>
-         </ol>
-     </nav>
+ <div class="right_block_product">
+     <div class="link_right_block">
+         <li class="link_right_block_item"><a href="{% url 'base' %}">Home</a></li>
+         <li class="link_right_block_item"><a href="#">{{ product.category.name }}</a></li>
+         <li class="link_right_block_item active" aria-current="page">{{ product.title }}</li>
+     </div>
      <div class="right_wrapper">
          <div class="picture_wrapper">
              <img src="{{ product.image.url }}" class="img-fluid">
@@ -38,4 +35,7 @@
      <script src="{% static 'js/script.js'%}"></script>
  </div>
 {% endblock %}
+
+
+
 
