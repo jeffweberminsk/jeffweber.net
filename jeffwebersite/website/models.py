@@ -68,7 +68,7 @@ class Product (models.Model):
     quantity = models.IntegerField(verbose_name='Quantity product')
     location = models.TextField(max_length=100)
     data_posted = models.DateField(auto_now=False, verbose_name='Date')
-    price = models.DecimalField(max_digits=9, decimal_places=2, verbose_name='Price')
+    price = models.DecimalField(max_digits=9, decimal_places=0, verbose_name='Price')
     description = models.TextField(verbose_name='Description', null=True)
 
     def __str__(self):

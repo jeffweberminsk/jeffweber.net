@@ -1,39 +1,39 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block right %}
- <div class="right_block_product">
-     <div class="link_right_block">
-         <li class="link_right_block_item"><a href="{% url 'base' %}">Home</a></li>
-         <li class="link_right_block_item"><a href="#">{{ product.category.name }}</a></li>
-         <li class="link_right_block_item active" aria-current="page">{{ product.title }}</li>
-     </div>
-     <div class="right_wrapper">
-         <div class="picture_wrapper">
-             <img src="{{ product.image.url }}" class="img-fluid">
+<div class="right_block_for_product">
+    <div class="block_for_link">
+         <div class="link_right_block">
+             <li class="link_right_block_item"><a href="{% url 'base' %}">Home</a></li>
+             <li class="link_right_block_item"><a href="#">{{ product.category.name }}</a></li>
+             <li class="link_right_block_item active" aria-current="page">{{ product.title }}</li>
          </div>
-          <table class="table">
-             <tbody>
-                 <tr>
-                     <td_title></td_title>
-                     <td><h1>Listing ID</h1> {{ product.id }}</td>
-                     <td><h1>Condition</h1> {{ product.condition }}</td>
-                     <td><h1>Quantity</h1> {{ product.quantity }}</td>
-                     <td><h1>Location</h1> {{ product.location }}</td>
-                     <td><h1>Data Posted</h1> {{ product.data_posted }}</td>
-                     <td_price>
-                         <td1>
-                             <div class="price">{{ product.price }}K USD</div>
-                         </td1>
-                         <td2>
-                             <button class="btn" data-modal>Contact Jeff</button>
-                         </td2>
-                     </td_price>
-                 </tr>
-             </tbody>
-         </table>
-     </div>
-     <script src="{% static 'js/script.js'%}"></script>
- </div>
+    </div>
+    <div class="right_block_product">
+        <div class="picture_wrapper">
+            <img src="{{ product.image.url }}" class="img-fluid">
+        </div>
+        <div class="table_title_right">
+            <tr>
+                <td><h2>{{ product.title }}</h2></td>
+                <td><div class="product_id"><h1>Listing ID</h1><h3>{{ product.id }}</h3></div></td>
+                <td><div class="product_condition"><h1>Condition</h1><h3>{{ product.condition }}</h3></div></td>
+                <td><div class="product_quantity"><h1>Quantity</h1><h3>{{ product.quantity }}</h3></div></td>
+                <td><div class="product_location"><h1>Location</h1><h3>{{ product.location }}</h3></div></td>
+                <td><div class="product_data_posted"><h1>Data Posted</h1><h3>{{ product.data_posted }}</h3></div></td>
+                <div class="product_price_and_button">
+                    <h4>
+                        <div class="price">{{ product.price }}K USD</div>
+                    </h4>
+                    <h5>
+                        <button class="product_footer_button" data-modal>Contact Jeff</button>
+                    </h5>
+                </div>
+            </tr>
+        </div>
+    </div>
+</div>
+<script src="{% static 'js/script.js'%}"></script>
 {% endblock %}
 
 
