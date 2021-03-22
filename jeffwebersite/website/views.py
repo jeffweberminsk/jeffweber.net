@@ -2,13 +2,13 @@ from django.shortcuts import render
 from django.views.generic import TemplateView
 from django.http import HttpResponse
 from django.views.generic import DetailView
-from .models import BlocksSwivels, BopAccumulatorsWellControl, CasingTubingRunning, Cementing, CoilTubing, Compressor, DrillString, DrillingRig, EnginesGensetsSCR, FishingTool, Flowback, Frac, HandlingTool, Manifold, Miscellaneou, MudPumpsConditioning, Nitrogen, OCTG, Offshore, Pumps, Slickline, Snubbing, Subsea, TopDrive, ThruTubing, WellServiceWorkover, WellTest, Wireline
+from .models import BlocksSwivels, BopAccumulatorsWellControl, CasingTubingRunning, Cementing, CoilTubing, Compressor, DrillString, DrillingRig, EnginesGensetsSCR, FishingTool, Flowback, Frac, HandlingTool, Manifold, Miscellaneou, MudPumpsConditioning, Nitrogen, OCTG, Offshore, Pumps, Slickline, Snubbing, Subsea, TopDrive, ThruTubing, WellServiceWorkover, WellTest, Wireline, Category
 # Create your views here.
 
 
 def test_view(request):
-    context = {}
-    return render(request, 'base.html', context)
+    categories = Category.objects.get_categories_for_left_sidebar()
+    return render(request, 'base.html', {'categories': categories})
 
 
 class ProductDetailView(DetailView):
@@ -37,7 +37,7 @@ class ProductDetailView(DetailView):
         'slickline': Slickline,
         'snubbing': Snubbing,
         'subsea': Subsea,
-        'topdrive': TopDrive,
+        'topdrives': TopDrive,
         'thrutubing': ThruTubing,
         'wellserviceworkover': WellServiceWorkover,
         'welltest': WellTest,
@@ -54,3 +54,11 @@ class ProductDetailView(DetailView):
     template_name = 'product_detail.html'
     slug_url_kwarg = 'slug'
 
+
+class CategoryDetailView(DetailView):
+
+    model = Category
+    queryset = Category.objects.all()
+    context_object_name = 'category'
+    template_name = 'category_detail.html'
+    slug_url_kwarg = 'slug'

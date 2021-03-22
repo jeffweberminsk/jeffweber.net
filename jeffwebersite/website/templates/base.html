@@ -58,88 +58,11 @@
                     <form class="categories-form">
                         <div class="categories_wrapper">
                             <ul class="categories_items">
+                                {% for category in categories %}
                                 <li class="categories_item">
-                                    <a href="" >Blocks & Swivels</a>
+                                    <a href="{{ category.url }}" >{{ category.name }} ({{ category.count }})</a>
                                 </li>
-                                <li class="categories_item">
-                                    <a href="" >BOP-Accumulators-Well Control</a>
-                                </li>
-                                <li class="categories_item">
-                                    <a href="" >Casing Tubing Running</a>
-                                </li><li class="categories_item">
-                                    <a href="#!" >Cementing</a>
-                                </li>
-                                <li class="categories_item">
-                                    <a href="#!" >Coil Tubing</a>
-                                </li>
-                                <li class="categories_item">
-                                    <a href="#!" >Compressors</a>
-                                </li><li class="categories_item">
-                                    <a href="#!" >Drill String</a>
-                                </li>
-                                <li class="categories_item">
-                                    <a href="#!" >Drilling Rigs</a>
-                                </li>
-                                <li class="categories_item">
-                                    <a href="#!" >Engines-Gensets-SCR</a>
-                                </li>
-                                <li class="categories_item">
-                                    <a href="#!" >Fishing Tools</a>
-                                </li>
-                                <li class="categories_item">
-                                    <a href="#!" >Flowback</a>
-                                </li>
-                                <li class="categories_item">
-                                    <a href="#!" >Frac</a>
-                                </li>
-                                <li class="categories_item">
-                                    <a href="#!" >Handling Tools</a>
-                                </li>
-                                <li class="categories_item">
-                                    <a href="#!" >Manifolds</a>
-                                </li>
-                                <li class="categories_item">
-                                    <a href="#!" >Miscellaneous</a>
-                                </li>
-                                <li class="categories_item">
-                                    <a href="#!" >Mud Pumps-Conditioning</a>
-                                </li>
-                                <li class="categories_item">
-                                    <a href="#!" >Nitrogen</a>
-                                </li>
-                                <li class="categories_item">
-                                    <a href="#!" >OCTG</a>
-                                </li>
-                                <li class="categories_item">
-                                    <a href="#!" >Offshore</a>
-                                </li>
-                                <li class="categories_item">
-                                    <a href="#!" >Pumps</a>
-                                </li>
-                                <li class="categories_item">
-                                    <a href="#!" >Slickline</a>
-                                </li>
-                                <li class="categories_item">
-                                    <a href="#!" >Snubbing</a>
-                                </li>
-                                <li class="categories_item">
-                                    <a href="#!" >Subsea</a>
-                                </li>
-                                <li class="categories_item">
-                                    <a href="#!" >Top Drives</a>
-                                </li>
-                                <li class="categories_item">
-                                    <a href="#!" >Thru Tubing</a>
-                                </li>
-                                <li class="categories_item">
-                                    <a href="#!" >Well Service-Workover</a>
-                                </li>
-                                <li class="categories_item">
-                                    <a href="#!" >Well Test</a>
-                                </li>
-                                <li class="categories_item">
-                                    <a href="#!" >Wireline</a>
-                                </li>
+                                {% endfor %}
                             </ul>
                         </div>
                     </form>

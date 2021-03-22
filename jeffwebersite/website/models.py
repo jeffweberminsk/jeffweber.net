@@ -12,6 +12,10 @@ from django.urls import reverse
 #Description
 
 
+def get_models_for_count(*model_names):
+    return [models.Count(model_name)for model_name in model_names]
+
+
 def get_product_url(obj, viewname):
     ct_model = obj.__class__._meta.model_name
     return reverse(viewname, kwargs={'ct_model': ct_model, 'slug': obj.slug})
@@ -45,12 +49,62 @@ class LatestProducts:
     objects = LatestProductsManager()
 
 
+class CategoryManager(models.Manager):
+
+    CATEGORY_NAME_COUNT_NAME = {
+        'Blocks&Swivels': 'blocksswivels__count',
+        'BOP-Accumulators-Well Control': 'bopaccumulatorswellcontrol__count',
+        'Casing Tubing Running': 'casingtubingrunning__count',
+        'Cementing': 'cementing__count',
+        'Coil Tubing': 'coiltubing__count',
+        'Compressors': 'compressor__count',
+        'Drill String': 'drillstring__count',
+        'Drilling Rigs': 'drillingrig__count',
+        'Engines-Gensets-SCR': 'enginesgensetsscr__count',
+        'Fishing Tools': 'fishingtool__count',
+        'Flowback': 'flowback__count',
+        'Frac': 'frac__count',
+        'Handling Tool': 'handlingtool__count',
+        'Manifolds': 'manifold__count',
+        'Miscellaneous': 'miscellaneou__count',
+        'Mud Pumps-Conditioning': 'mudpumpsconditioning__count',
+        'Nitrogen': 'nitrogen__count',
+        'OCTG': 'octg__count',
+        'Offshore': 'offshore__count',
+        'Pumps': 'pumps__count',
+        'Slickline': 'slickline__count',
+        'Snubbing': 'snubbing__count',
+        'Subsea': 'subsea__count',
+        'Top Drives': 'topdrive__count',
+        'Thru Tubing': 'thrutubing__count',
+        'Well Service-Workover': 'wellserviceworkover__count',
+        'Well Test': 'welltest__count',
+        'Wireline': 'wireline__count',
+    }
+
+    def get_queryset(self):
+        return super().get_queryset()
+
+    def get_categories_for_left_sidebar(self):
+        models = get_models_for_count('blocksswivels', 'bopaccumulatorswellcontrol', 'casingtubingrunning', 'cementing', 'coiltubing', 'compressor', 'drillstring', 'drillingrig', 'enginesgensetsscr', 'fishingtool', 'flowback', 'frac', 'handlingtool', 'manifold', 'miscellaneou', 'mudpumpsconditioning', 'nitrogen', 'octg', 'offshore', 'pumps', 'slickline', 'snubbing', 'subsea', 'thrutubing', 'wellserviceworkover', 'welltest', 'wireline', 'topdrive')
+        qs = list(self.get_queryset().annotate(*models))
+        data = [
+            dict(name=c.name, url=c.get_absolute_url(), count=getattr(c, self.CATEGORY_NAME_COUNT_NAME[c.name]))
+            for c in qs
+        ]
+        return data
+
+
 class Category (models.Model):
     name = models.CharField(max_length=1000, verbose_name='category name')
     slug = models.SlugField(unique=True)
+    objects = CategoryManager()
 
     def __str__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return reverse('category_detail', kwargs={'slug':self.slug})
 
 
 class Product (models.Model):
@@ -267,14 +321,6 @@ class Subsea (Product):
         return get_product_url(self, 'product_detail')
 
 
-class TopDrive (Product):
-    def __str__(self):
-        return '{}:{}'.format(self.category.name, self.title)
-
-    def get_absolute_url(self):
-        return get_product_url(self, 'product_detail')
-
-
 class ThruTubing (Product):
     def __str__(self):
         return '{}:{}'.format(self.category.name, self.title)
@@ -307,4 +353,9 @@ class Wireline (Product):
         return get_product_url(self, 'product_detail')
 
 
+class TopDrive (Product):
+    def __str__(self):
+        return '{}:{}'.format(self.category.name, self.title)
 
+    def get_absolute_url(self):
+        return get_product_url(self, 'product_detail')
