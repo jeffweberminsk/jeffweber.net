@@ -1,17 +1,29 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
 from django.http import HttpResponse
-from django.views.generic import DetailView
-from .models import BlocksSwivels, BopAccumulatorsWellControl, CasingTubingRunning, Cementing, CoilTubing, Compressor, DrillString, DrillingRig, EnginesGensetsSCR, FishingTool, Flowback, Frac, HandlingTool, Manifold, Miscellaneou, MudPumpsConditioning, Nitrogen, OCTG, Offshore, Pumps, Slickline, Snubbing, Subsea, TopDrive, ThruTubing, WellServiceWorkover, WellTest, Wireline, Category
-# Create your views here.
+from django.views.generic import DetailView, View
+from .models import BlocksSwivels, BopAccumulatorsWellControl, CasingTubingRunning, Cementing, CoilTubing, Compressor, DrillString, DrillingRig, EnginesGensetsSCR, FishingTool, Flowback, Frac, HandlingTool, Manifold, Miscellaneou, MudPumpsConditioning, Nitrogen, OCTG, Offshore, Pumps, Slickline, Snubbing, Subsea, TopDrive, ThruTubing, WellServiceWorkover, WellTest, Wireline, Category, LatestProducts
+from .mixins import CategoryDetailMixin
 
 
-def test_view(request):
-    categories = Category.objects.get_categories_for_left_sidebar()
-    return render(request, 'base.html', {'categories': categories})
+class BaseView (View):
+
+    def get (self, request, *args, **kwargs):
+        categories = Category.objects.get_categories_for_left_sidebar()
+        products = LatestProducts.objects.get_products_for_main_page('blocksswivels', 'octg', 'welltest', 'wireline', 'wellserviceworkover', 'thrutubing', 'subsea', 'snubbing', 'pumps', 'slickline', 'offshore', 'mudpumpsconditioning', 'nitrogen', 'manifold', 'miscellaneou', 'handlingtool', 'fishingtool', 'flowback', 'bopaccumulatorswellcontrol', 'enginesgensetsscr', 'casingtubingrunning', 'cementing', 'drillingrig', 'drillstring', 'frac', 'coiltubing', 'compressor', 'topdrive',)
+        context = {
+            'categories': categories,
+            'products':products
+        }
+        return render(request, 'base.html', context)
 
 
-class ProductDetailView(DetailView):
+# def test_view(request):
+#     categories = Category.objects.get_categories_for_left_sidebar()
+#     return render(request, 'base.html', {'categories': categories})
+
+
+class ProductDetailView(CategoryDetailMixin, DetailView):
 
     CT_MODEL_MODEL_CLASS = {
         'blocksswivels': BlocksSwivels,
@@ -37,7 +49,7 @@ class ProductDetailView(DetailView):
         'slickline': Slickline,
         'snubbing': Snubbing,
         'subsea': Subsea,
-        'topdrives': TopDrive,
+        'topdrive': TopDrive,
         'thrutubing': ThruTubing,
         'wellserviceworkover': WellServiceWorkover,
         'welltest': WellTest,
@@ -55,7 +67,7 @@ class ProductDetailView(DetailView):
     slug_url_kwarg = 'slug'
 
 
-class CategoryDetailView(DetailView):
+class CategoryDetailView(CategoryDetailMixin, DetailView):
 
     model = Category
     queryset = Category.objects.all()

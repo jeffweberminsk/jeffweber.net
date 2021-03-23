@@ -74,51 +74,45 @@
                         <h1>New Equipment</h1>
                     </div>
                     <div class="right_wrapper">
+                        {% for product in products %}
                         <div class="card">
-                            <div class="card_image">
-                                <img src="{% static 'img/svg/picture.jpg'%}" alt="picture">
-                            </div>
+                            <a href="{{ product.get_absolute_url }}" ><img class="card_image"src="{{ product.image.url }}" alt=""></a>
                             <div class="card_descr">
-                                <div class="card_title">{{ product.title }}</div>
+                                <div class="card_title">
+                                    <a href="{{ product.get_absolute_url }}">{{ product.title }}</a>
+                                </div>
                                 <div class="card_subtitle">
                                     <div class="title_category">
                                         <h1>Сategory:</h1>
-                                        <li class="category_value">
-                                            <a href="#!" >{{ product.category.name }}</a>
-                                        </li>
+                                        <a class="category_value" href="#!" >{{ product.category.name }}</a>
                                     </div>
                                     <div class="title_condition">
                                         <h1>Condition:</h1>
-                                        <li class="condition_value">
-                                            <a href="#!" >{{ product.condition }}</a>
-                                        </li>
+                                        <a href="#!" class="condition_value" >{{ product.condition }}</a>
                                     </div>
                                     <div class="title_location">
                                         <h1>Location:</h1>
-                                        <li class="location_value">
-                                            <a href="#!" >{{ product.location }}</a>
-                                        </li>
+                                        <a href="#!" class="location_value" >{{ product.location }}</a>
                                     </div>
                                     <div class="title_date">
                                         <h1>Date Posted:</h1>
-                                        <li class="date_value">
-                                            <a href="#!" >{{ product.data_posted }}</a>
-                                        </li>
+                                        <a href="#!" class="date_value">{{ product.data_posted }}</a>
                                     </div>
                                 </div>
-                            </div>
-                            <hr>
-                            <div class="card_footer">
-                                <div class="card_price">{{ product.price }}K USD</div>
-                                    <a href="/jeffweber/product" class="card_button">
-                                        <img src="{% static 'img/svg/button_right_block.svg'%}" alt="#!" class="card_icon">
-                                    </a>
+                                <hr>
+                                <div class="card_footer">
+                                    <div class="card_price">{{ product.price }}K USD</div>
+                                        <a href="{{ product.get_absolute_url }}" class="card_button">
+                                            <img src="{% static 'img/svg/button_right_block.svg'%}" alt="#!" class="card_icon">
+                                        </a>
                                 </div>
                             </div>
+                        </div>
+                        {% endfor %}
                     </div>
-                    <div class="show_more">
-                        <a href="#!" >Show More</a>
-                    </div>
+                </div>
+                <div class="show_more">
+                    <a href="#!" >Show More</a>
                 </div>
                 {% endblock %}
             </div>
