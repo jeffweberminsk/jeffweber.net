@@ -104,7 +104,7 @@ class Category (models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse('category_detail', kwargs={'slug':self.slug})
+        return reverse('category_detail', kwargs={'slug': self.slug})
 
 
 class Product (models.Model):
@@ -120,9 +120,9 @@ class Product (models.Model):
     image = models.ImageField(verbose_name='Image')
     condition = models.CharField(max_length=50, verbose_name='Condition')
     quantity = models.IntegerField(verbose_name='Quantity product')
-    location = models.TextField(max_length=100)
+    location = models.CharField(max_length=50)
     data_posted = models.DateField(auto_now=False, verbose_name='Date')
-    price = models.DecimalField(max_digits=9, decimal_places=0, verbose_name='Price')
+    price = models.CharField(max_length=50, verbose_name='Price')
     description = models.TextField(verbose_name='Description', null=True)
 
     def __str__(self):

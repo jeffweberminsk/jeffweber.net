@@ -1,7 +1,57 @@
 {% extends 'base.html' %}
+{% load static %}
+
 
 {% block right %}
 
-{{ category.name }}
-
+<div class="right_block_category">
+    <div class="block_for_link">
+         <div class="link_right_block">
+             <li class="link_right_block_item"><a href="{% url 'base' %}">Home</a></li>
+             <li class="link_right_block_item active">{{ category.name }}</li>
+         </div>
+    </div>
+    <div class="right_wrapper">
+        {% for product in category_products %}
+        <div class="card">
+            <a href="{{ product.get_absolute_url }}" ><img class="card_image"src="{{ product.image.url }}" alt=""></a>
+            <div class="card_descr">
+                <div class="card_title">
+                    <a href="{{ product.get_absolute_url }}">{{ product.title }}</a>
+                </div>
+                <div class="card_subtitle">
+                    <div class="title_category">
+                        <h1>Сategory:</h1>
+                        <a class="category_value" href="#!" >{{ product.category.name }}</a>
+                    </div>
+                    <div class="title_condition">
+                        <h1>Condition:</h1>
+                        <a href="#!" class="condition_value" >{{ product.condition }}</a>
+                    </div>
+                    <div class="title_location">
+                        <h1>Location:</h1>
+                        <a href="#!" class="location_value" >{{ product.location }}</a>
+                    </div>
+                    <div class="title_date">
+                        <h1>Date Posted:</h1>
+                        <a href="#!" class="date_value">{{ product.data_posted }}</a>
+                    </div>
+                </div>
+                <hr>
+                <div class="card_footer">
+                    <div class="card_price">{{ product.price }}</div>
+                    <a href="{{ product.get_absolute_url }}" class="card_button">
+                        <img src="{% static 'img/svg/button_right_block.svg'%}" alt="#!" class="card_icon">
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<div class="show_more">
+    <a href="#!" >Show More</a>
+</div>
 {% endblock %}
+
+

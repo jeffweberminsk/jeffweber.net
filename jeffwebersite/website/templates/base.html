@@ -14,7 +14,7 @@
         <div class="wrapper">
            <div class="header_wrapper">
                <div class="header_logo">
-                   <a href="/jeffweber/base" class="header_logo-link">
+                   <a href="{% url 'base' %}" class="header_logo-link">
                        <img src="{% static 'img/svg/logo.svg'%}" alt="logo" class="header_logo-pic">
                    </a>
                </div>
@@ -24,14 +24,14 @@
                            <li class="header_item">
                                <div class="nav_wrapper">
                                    <img src="{% static 'img/svg/icon_phone.svg'%}" alt="icon phone" class="icon_phone">
-                                   <a href="#!" class="header_link">+1-302-231-1880</a>
+                                   <a href="tel:13022311880" class="header_link">+1-302-231-1880</a>
                                </div>
 
                            </li>
                            <li class="header_item">
                                <div class="nav_wrapper">
                                    <img src="{% static 'img/svg/icon_message.svg'%}" alt="icon email" class="icon_email">
-                                   <a href="#!" class="header_link">jeff@jeffweber.net</a>
+                                   <a href="mailto:jeff@jeffweber.net" class="header_link">jeff@jeffweber.net</a>
                                </div>
                            </li>
                        </ul>
@@ -101,7 +101,7 @@
                                 </div>
                                 <hr>
                                 <div class="card_footer">
-                                    <div class="card_price">{{ product.price }}K USD</div>
+                                    <div class="card_price">{{ product.price }}</div>
                                         <a href="{{ product.get_absolute_url }}" class="card_button">
                                             <img src="{% static 'img/svg/button_right_block.svg'%}" alt="#!" class="card_icon">
                                         </a>

@@ -13,7 +13,7 @@ class BaseView (View):
         products = LatestProducts.objects.get_products_for_main_page('blocksswivels', 'octg', 'welltest', 'wireline', 'wellserviceworkover', 'thrutubing', 'subsea', 'snubbing', 'pumps', 'slickline', 'offshore', 'mudpumpsconditioning', 'nitrogen', 'manifold', 'miscellaneou', 'handlingtool', 'fishingtool', 'flowback', 'bopaccumulatorswellcontrol', 'enginesgensetsscr', 'casingtubingrunning', 'cementing', 'drillingrig', 'drillstring', 'frac', 'coiltubing', 'compressor', 'topdrive',)
         context = {
             'categories': categories,
-            'products':products
+            'products': products
         }
         return render(request, 'base.html', context)
 
@@ -53,7 +53,7 @@ class ProductDetailView(CategoryDetailMixin, DetailView):
         'thrutubing': ThruTubing,
         'wellserviceworkover': WellServiceWorkover,
         'welltest': WellTest,
-        'wireline': Wireline,
+        'wireline': Wireline
 
     }
 

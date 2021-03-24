@@ -250,6 +250,10 @@ body{
 
 
 /* Right block start*/
+.right_block_category{
+    margin-top:26px;
+    margin-left:42px;
+}
 
 .right_block{
     margin-left:42px;
@@ -1107,7 +1111,7 @@ to {
     color:#fff;
     font-weight:500;
     font-size:14px;
-    margin-left:222px;
+    margin-left:133px;
     margin-top:35px;
 }
 .product_price_and_button > h4{
@@ -1117,7 +1121,7 @@ to {
     margin-top:42px;
 }
 .price{
-    width:109px;
+    width:180px;
     height:28px;
 }
 /* Product page finish */
