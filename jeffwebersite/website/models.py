@@ -5,6 +5,7 @@ from django.contrib.contenttypes.models import ContentType
 from django.forms import ModelChoiceField, ModelForm, ValidationError
 from django.urls import reverse
 
+
 # Create your models here.
 #Category
 #Product
@@ -144,6 +145,9 @@ class BlocksSwivels(Product):
     def get_absolute_url(self):
         return get_product_url(self, 'product_detail')
 
+    def get_listing_id(self):
+        return '11'+str(self.id)
+
 
 class BopAccumulatorsWellControl(Product):
     def __str__(self):
@@ -151,6 +155,9 @@ class BopAccumulatorsWellControl(Product):
 
     def get_absolute_url(self):
         return get_product_url(self, 'product_detail')
+
+    def get_listing_id(self):
+        return '12'+str(self.id)
 
 
 class CasingTubingRunning (Product):
@@ -160,6 +167,9 @@ class CasingTubingRunning (Product):
     def get_absolute_url(self):
         return get_product_url(self, 'product_detail')
 
+    def get_listing_id(self):
+        return '13'+str(self.id)
+
 
 class Cementing(Product):
     def __str__(self):
@@ -167,6 +177,9 @@ class Cementing(Product):
 
     def get_absolute_url(self):
         return get_product_url(self, 'product_detail')
+
+    def get_listing_id(self):
+        return '14'+str(self.id)
 
 
 class CoilTubing (Product):
@@ -176,6 +189,9 @@ class CoilTubing (Product):
     def get_absolute_url(self):
         return get_product_url(self, 'product_detail')
 
+    def get_listing_id(self):
+        return '15'+str(self.id)
+
 
 class Compressor (Product):
     def __str__(self):
@@ -183,6 +199,9 @@ class Compressor (Product):
 
     def get_absolute_url(self):
         return get_product_url(self, 'product_detail')
+
+    def get_listing_id(self):
+        return '16'+str(self.id)
 
 
 class DrillString (Product):
@@ -192,6 +211,9 @@ class DrillString (Product):
     def get_absolute_url(self):
         return get_product_url(self, 'product_detail')
 
+    def get_listing_id(self):
+        return '17'+str(self.id)
+
 
 class DrillingRig (Product):
     def __str__(self):
@@ -199,6 +221,9 @@ class DrillingRig (Product):
 
     def get_absolute_url(self):
         return get_product_url(self, 'product_detail')
+
+    def get_listing_id(self):
+        return '18'+str(self.id)
 
 
 class EnginesGensetsSCR (Product):
@@ -208,6 +233,9 @@ class EnginesGensetsSCR (Product):
     def get_absolute_url(self):
         return get_product_url(self, 'product_detail')
 
+    def get_listing_id(self):
+        return '19'+str(self.id)
+
 
 class FishingTool (Product):
     def __str__(self):
@@ -215,6 +243,9 @@ class FishingTool (Product):
 
     def get_absolute_url(self):
         return get_product_url(self, 'product_detail')
+
+    def get_listing_id(self):
+        return '20'+str(self.id)
 
 
 class Flowback (Product):
@@ -224,6 +255,9 @@ class Flowback (Product):
     def get_absolute_url(self):
         return get_product_url(self, 'product_detail')
 
+    def get_listing_id(self):
+        return '21'+str(self.id)
+
 
 class Frac (Product):
     def __str__(self):
@@ -231,6 +265,9 @@ class Frac (Product):
 
     def get_absolute_url(self):
         return get_product_url(self, 'product_detail')
+
+    def get_listing_id(self):
+        return '22'+str(self.id)
 
 
 class HandlingTool (Product):
@@ -240,6 +277,9 @@ class HandlingTool (Product):
     def get_absolute_url(self):
         return get_product_url(self, 'product_detail')
 
+    def get_listing_id(self):
+        return '23'+str(self.id)
+
 
 class Manifold (Product):
     def __str__(self):
@@ -247,6 +287,9 @@ class Manifold (Product):
 
     def get_absolute_url(self):
         return get_product_url(self, 'product_detail')
+
+    def get_listing_id(self):
+        return '24'+str(self.id)
 
 
 class Miscellaneou (Product):
@@ -256,6 +299,9 @@ class Miscellaneou (Product):
     def get_absolute_url(self):
         return get_product_url(self, 'product_detail')
 
+    def get_listing_id(self):
+        return '25'+str(self.id)
+
 
 class MudPumpsConditioning (Product):
     def __str__(self):
@@ -263,6 +309,9 @@ class MudPumpsConditioning (Product):
 
     def get_absolute_url(self):
         return get_product_url(self, 'product_detail')
+
+    def get_listing_id(self):
+        return '26'+str(self.id)
 
 
 class Nitrogen (Product):
@@ -272,6 +321,9 @@ class Nitrogen (Product):
     def get_absolute_url(self):
         return get_product_url(self, 'product_detail')
 
+    def get_listing_id(self):
+        return '27'+str(self.id)
+
 
 class OCTG (Product):
     def __str__(self):
@@ -279,6 +331,9 @@ class OCTG (Product):
 
     def get_absolute_url(self):
         return get_product_url(self, 'product_detail')
+
+    def get_listing_id(self):
+        return '28'+str(self.id)
 
 
 class Offshore (Product):
@@ -288,6 +343,9 @@ class Offshore (Product):
     def get_absolute_url(self):
         return get_product_url(self, 'product_detail')
 
+    def get_listing_id(self):
+        return '29'+str(self.id)
+
 
 class Pumps (Product):
     def __str__(self):
@@ -295,6 +353,9 @@ class Pumps (Product):
 
     def get_absolute_url(self):
         return get_product_url(self, 'product_detail')
+
+    def get_listing_id(self):
+        return '30'+str(self.id)
 
 
 class Slickline (Product):
@@ -304,6 +365,9 @@ class Slickline (Product):
     def get_absolute_url(self):
         return get_product_url(self, 'product_detail')
 
+    def get_listing_id(self):
+        return '31'+str(self.id)
+
 
 class Snubbing (Product):
     def __str__(self):
@@ -311,6 +375,9 @@ class Snubbing (Product):
 
     def get_absolute_url(self):
         return get_product_url(self, 'product_detail')
+
+    def get_listing_id(self):
+        return '32'+str(self.id)
 
 
 class Subsea (Product):
@@ -320,6 +387,9 @@ class Subsea (Product):
     def get_absolute_url(self):
         return get_product_url(self, 'product_detail')
 
+    def get_listing_id(self):
+        return '33'+str(self.id)
+
 
 class ThruTubing (Product):
     def __str__(self):
@@ -327,6 +397,9 @@ class ThruTubing (Product):
 
     def get_absolute_url(self):
         return get_product_url(self, 'product_detail')
+
+    def get_listing_id(self):
+        return '34'+str(self.id)
 
 
 class WellServiceWorkover (Product):
@@ -336,6 +409,9 @@ class WellServiceWorkover (Product):
     def get_absolute_url(self):
         return get_product_url(self, 'product_detail')
 
+    def get_listing_id(self):
+        return '35'+str(self.id)
+
 
 class WellTest (Product):
     def __str__(self):
@@ -343,6 +419,9 @@ class WellTest (Product):
 
     def get_absolute_url(self):
         return get_product_url(self, 'product_detail')
+
+    def get_listing_id(self):
+        return '36'+str(self.id)
 
 
 class Wireline (Product):
@@ -352,6 +431,9 @@ class Wireline (Product):
     def get_absolute_url(self):
         return get_product_url(self, 'product_detail')
 
+    def get_listing_id(self):
+        return '37'+str(self.id)
+
 
 class TopDrive (Product):
     def __str__(self):
@@ -359,3 +441,6 @@ class TopDrive (Product):
 
     def get_absolute_url(self):
         return get_product_url(self, 'product_detail')
+
+    def get_listing_id(self):
+        return '38'+str(self.id)
