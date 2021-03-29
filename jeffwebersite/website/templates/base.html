@@ -47,20 +47,21 @@
             <div class="wrapper">
                 {% block left %}
                 <div class="left_block">
-                     <form class="search-form">
-                        <div class="search_wrapper">
-                            <input type="text" class="search_input" value="Search for Equipment...">
-                            <div class="search_button">
-                                <img src="{% static 'img/svg/lupa.svg'%}" alt="" class="search_icon" >
-                            </div>
-                        </div>
+                     <form action="" method="post" class="search-form">
+                         {% csrf_token %}
+                         <div class="search_wrapper">
+                             <input name="search" type="text" class="search_input" value="Search for Equipment...">
+                             <button type="submit" class="search_button">
+                                 <img src="{% static 'img/svg/lupa.svg'%}" alt="" class="search_icon" >
+                             </button>
+                         </div>
                     </form>
                     <form class="categories-form">
                         <div class="categories_wrapper">
                             <ul class="categories_items">
-                                {% for category in categories %}
+                                {% for category in all_category %}
                                 <li class="categories_item">
-                                    <a href="{{ category.url }}" >{{ category.name }} ({{ category.count }})</a>
+                                    <a href="{{ category.url }}" >{{ category.name }}</a>
                                 </li>
                                 {% endfor %}
                             </ul>
@@ -74,7 +75,7 @@
                         <h1>New Equipment</h1>
                     </div>
                     <div class="right_wrapper">
-                        {% for product in products %}
+                        {% for product in all_product %}
                         <div class="card">
                             <a href="{{ product.get_absolute_url }}" ><img class="card_image"src="{{ product.image.url }}" alt=""></a>
                             <div class="card_descr">
@@ -84,7 +85,7 @@
                                 <div class="card_subtitle">
                                     <div class="title_category">
                                         <h1>Сategory:</h1>
-                                        <a class="category_value" href="#!" >{{ product.category.name }}</a>
+                                        <a class="category_value" href="#!" >{{ product.category }}</a>
                                     </div>
                                     <div class="title_condition">
                                         <h1>Condition:</h1>
