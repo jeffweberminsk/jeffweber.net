@@ -1,4 +1,10 @@
 from django.db import models
+from django.urls import reverse
+
+#
+# def get_product_url(obj, viewname):
+#     all_category = Category.objects.all()
+#     return reverse(viewname, kwargs={'all_category': all_category, 'title': obj.title})
 
 
 class Category (models.Model):
@@ -6,6 +12,9 @@ class Category (models.Model):
 
     def __str__(self):
         return self.name
+
+    # def get_absolute_url(self):
+    #     return reverse('category_detail', kwargs={'name':self.name})
 
 
 class Product (models.Model):
@@ -22,3 +31,6 @@ class Product (models.Model):
 
     def __str__(self):
         return self.title
+
+    # def get_absolute_url(self):
+    #     return get_product_url(self, 'product_detail')
