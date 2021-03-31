@@ -8,18 +8,18 @@ from django.urls import reverse
 
 
 class Category (models.Model):
-    name = models.CharField(max_length=55, verbose_name='category name')
+    name = models.CharField(max_length=55, verbose_name='Name')
 
     def __str__(self):
         return self.name
 
-    # def get_absolute_url(self):
-    #     return reverse('category_detail', kwargs={'name':self.name})
+    def get_absolute_url(self):
+        return reverse('category_detail', kwargs={'name':self.name})
 
 
 class Product (models.Model):
 
-    category = models.ForeignKey(Category, verbose_name='Category', on_delete=models.CASCADE)
+    category = models.ForeignKey(Category, related_name='Category', on_delete=models.CASCADE)
     title = models.CharField(max_length=100, verbose_name='Title')
     image = models.ImageField(verbose_name='Image')
     condition = models.CharField(max_length=50, verbose_name='Condition')

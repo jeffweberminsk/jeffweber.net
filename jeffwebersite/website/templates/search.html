@@ -1,5 +1,12 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block head %}
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Title{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'styles/style.css'%}">
+</head>
+{% endblock %}
 {% block right %}
 <div class="right_block">
     <div class="title_right_block">

@@ -724,7 +724,7 @@ body{
     font-size: 36px;
     font-weight:700;
     height:42px;
-    margin-top:45px;
+    margin-top:12px;
 
 }
 .title_modal_ru_office{
@@ -791,7 +791,7 @@ body{
     margin:0 0 0 10px;
 }
 .modal__name{
-    margin:30px 321px 12px 51px;
+    margin:15px 321px 12px 51px;
     font-size:14px;
     font-weight:500;
 }
@@ -838,7 +838,7 @@ body{
 .modal .btn {
     display: block;
     width: 149px;
-    margin: 29px 53px 45px 238px;
+    margin: 20px 53px 45px 238px;
     font-size:14px;
     font-weight:500;
 }
@@ -926,7 +926,7 @@ to {
 
 .modal_message_jeff{
     width:440px;
-    height:597px;
+    height:615px;
     background-color:#fff;
     position: absolute;
     right:105px;

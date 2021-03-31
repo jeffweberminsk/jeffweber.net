@@ -32,14 +32,10 @@ class Base(TemplateView):
         return render(request, 'search.html', context)
 
 
-# class ProductDetailView(DetailView):
-#
-#     def dispatch(self, request, *args, **kwargs):
-#         self.model = self.all_category[kwargs['all_category']]
-#         self.queryset = self.model._base_manager.all()
-#         return super().dispatch(request, *args, **kwargs)
-#
-#
-#     context_object_name = 'product'
-#     template_name = 'product_detail'
-#     slug_url_kwarg = 'title'
+class CategoryDetailView(DetailView):
+
+    model = Category
+    queryset = Category.objects.all()
+    context_object_name = 'category'
+    template_name = 'category_detail.html'
+    slug_url_kwarg = 'name'
