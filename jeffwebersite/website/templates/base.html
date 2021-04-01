@@ -58,13 +58,13 @@
                     </form>
                     <form class="categories-form">
                         <div class="categories_wrapper">
-                            <ul class="categories_items">
-                                {% for category in all_category %}
-                                <li class="categories_item">
-                                    <a href="{{ category.url }}" >{{ category.name }}</a>
+                            {% for c in categories %}
+                            <ul class="categories_items {% if category.slug == c.slug %} selected_category {% endif %}">
+                                <li class="categories_item ">
+                                    <a href="{% url 'category_detail' c.slug %}" >{{ c.name }}</a>
                                 </li>
-                                {% endfor %}
                             </ul>
+                            {% endfor %}
                         </div>
                     </form>
                 </div>
@@ -75,12 +75,12 @@
                         <h1>New Equipment</h1>
                     </div>
                     <div class="right_wrapper">
-                        {% for product in all_product %}
+                        {% for product in products %}
                         <div class="card">
-                            <a href="{{ product.get_absolute_url }}" ><img class="card_image"src="{{ product.image.url }}" alt=""></a>
+                            <a href="#!" ><img class="card_image"src="{{ product.image.url }}" alt=""></a>
                             <div class="card_descr">
                                 <div class="card_title">
-                                    <a href="{{ product.get_absolute_url }}">{{ product.title }}</a>
+                                    <a href="#!">{{ product.title }}</a>
                                 </div>
                                 <div class="card_subtitle">
                                     <div class="title_category">
@@ -103,7 +103,7 @@
                                 <hr>
                                 <div class="card_footer">
                                     <div class="card_price">{{ product.price }}</div>
-                                        <a href="{{ product.get_absolute_url }}" class="card_button">
+                                        <a href="#!" class="card_button">
                                             <img src="{% static 'img/svg/button_right_block.svg'%}" alt="#!" class="card_icon">
                                         </a>
                                 </div>
