@@ -3,7 +3,7 @@ from django.urls import reverse
 
 
 class Category (models.Model):
-
+    id = models.BigAutoField(primary_key=True)
     name = models.CharField(max_length=55)
     slug = models.SlugField(max_length=200, unique=True)
 
@@ -17,8 +17,8 @@ class Category (models.Model):
 
 
 class Product (models.Model):
-
-    category = models.ForeignKey(Category, related_name='products', on_delete=models.CASCADE)
+    id = models.BigAutoField(primary_key=True)
+    category = models.ForeignKey(to=Category, related_name='products', on_delete=models.CASCADE)
     title = models.CharField(max_length=100)
     slug = models.SlugField(max_length=200, db_index=True)
     image = models.ImageField(verbose_name='Image')
