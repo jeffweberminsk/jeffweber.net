@@ -1,63 +1,78 @@
-from django.shortcuts import render, get_object_or_404
-from django.views.generic import TemplateView, DetailView
-from .models import Product, Category
+from django.shortcuts import render
+from django.http import HttpResponse
+
+# Create your views here.
 
 
-def base(request, category_slug=None):
-    category = None
-    categories = Category.objects.all()
-    products = Product.objects.filter(available=True)
-    if category_slug:
-        category = get_object_or_404(Category, slug=category_slug)
-        products = products.filter(category=category)
-    return render(request,
-                  'base.html',
-                  {'category': category,
-                   'categories': categories,
-                   'products': products})
+def homepage(request):
+    context = {}
+    return render(request, 'homepage.html', context)
 
 
-# def product_detail(request, product_slug=None):
-#     product = None
-#     products = Product.objects.all()
-#     if product_slug:
-#         product = get_object_or_404(Product, slug=product_slug)
-#         products = products.filter(product=product)
-#     return render(request, 'product_detail',
-#                   {'product': product,
-#                    'products': products})
+def blockswivels(request):
+    context = {
+        'name':'Blocks & Swivels',
+    }
+    return render(request, 'blockswivels.html',context)
 
 
+def product(request):
+    context = {
+    }
+    return render(request, 'product.html', context)
 
 
+def product1(request):
+    context = {
+    }
+    return render(request, 'product1.html', context)
 
 
+def product2(request):
+    context = {
+    }
+    return render(request, 'product2.html', context)
 
-# class Base(TemplateView):
-#     template_name = 'base.html'
-#
-#     def get(self, request):
-#         all_category = Category.objects.all()
-#         all_product = Product.objects.all()
-#         ctx = {
-#             'all_category': all_category,
-#             'all_product': all_product
-#
-#         }
-#         return render(request, self.template_name, ctx)
-#
-#     def post(self, request):
-#         query = request.POST['search']
-#         result_list = Product.objects.filter(category__name=query)
-#         if result_list.count() != 0:
-#             context = {
-#               'result_list': result_list,
-#               'query': query,
-#             }
-#         else:
-#             context = {
-#                 'empty': 'Ничего не найдено',
-#                 'query': query
-#             }
-#         return render(request, 'search.html', context)
+
+def product3(request):
+    context = {
+    }
+    return render(request, 'product3.html', context)
+
+def product4(request):
+    context = {
+    }
+    return render(request, 'product4.html', context)
+
+
+def product5(request):
+    context = {
+    }
+    return render(request, 'product5.html', context)
+
+
+def product6(request):
+    context = {
+    }
+    return render(request, 'product6.html', context)
+
+
+def bopaccumulatorswellcontrol(request):
+    context = {
+        'name':'BOP-Accumulators-Well Control',
+    }
+    return render(request, 'bopaccumulatorswellcontrol.html',context)
+
+
+def casingtubingrunning(request):
+    context = {
+        'name':'Casing Tubing Running',
+    }
+    return render(request, 'casingtubingrunning.html',context)
+
+def cementing(request):
+    context = {
+        'name':'Blocks & Swivels',
+    }
+    return render(request, 'cementing.html',context)
 

@@ -1,9 +1,20 @@
-from django.urls import path
 from . import views
+from django.urls import path
 
-# app_name = 'jeffweber'
 urlpatterns = [
-    path('', views.base, name='base'),
-    path('<category_slug>/', views.base, name='category_detail'),
-    # path('<product_id>/<slug>/', views.product_detail, name='product_detail')
+    path('homepage/', views.homepage),
+    path('blockswivels/', views.blockswivels),
+    path('product/', views.product),
+    path('product1/', views.product1),
+    path('product2/', views.product2),
+    path('product3/', views.product3),
+    path('product4/', views.product4),
+    path('product5/', views.product5),
+    path('product6/', views.product6),
+    path('bopaccumulatorswellcontrol/', views.bopaccumulatorswellcontrol),
+    path('casingtubingrunning/', views.casingtubingrunning),
+    path('cementing/', views.cementing),
+    # path('coiltubing/', views.coiltubing),
+    # path('compressors/', views.compressors),
+    # path('drillstring/', views.drillstring),
 ]

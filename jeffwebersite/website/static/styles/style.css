@@ -234,18 +234,8 @@ body{
     color:black;
 }
 
-
-.selected_category{
-    background-color:#5C5FAB;
-    border-radius:8px;
-}
-
-.selected_category > .categories_item > a  {
-    color:white !important;
-}
-
 .categories_items{
-    padding:15px 0 15px 40px;
+    padding:29px 0 32px 40px;
 }
 
 .categories_item{
@@ -260,10 +250,6 @@ body{
 
 
 /* Right block start*/
-.right_block_category{
-    margin-top:26px;
-    margin-left:42px;
-}
 
 .right_block{
     margin-left:42px;
@@ -281,13 +267,12 @@ body{
     border-radius:11px;
 }
 
-.card_image {
+.card_image{
     height:165px;
     width:287px;
-    border-radius:11px;
 }
 
-.a > card_image{
+.card_image > img{
     width:100%;
     height:100%;
     object-fit: cover;
@@ -307,25 +292,9 @@ body{
     padding:23px 0 0 23px;
 }
 
-.card_descr >hr {
-    margin:25px 6px 0px -11px;
-}
-
-.card_descr > card_title{
-    width:212px;
-    height:32px;
-}
-
 .card_title{
-    font-size:14px;
+    front-size:14px;
     font-weight:500;
-    width:212px;
-    height:32px;
-
-}
-.card_title > a{
-    text-decoration:none;
-    color:rgba(31, 31, 49, 1);
 }
 
 .card_subtitle{
@@ -340,7 +309,7 @@ body{
     margin-top:5px;
     display:flex;
     justify-content:space-between;
-    padding:0 23px 0 0px;
+    padding:0 23px 0 23px;
     align-items:center;
 }
 
@@ -374,25 +343,25 @@ body{
     color:rgba(31, 31, 49, 1);
     font-size:10px;
     font-weight:300;
-    padding:0 5px 0 0;
+    padding:0 11px 0 0;
 }
 
-.title_category > a{
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow:ellipsis;
+.category_value > a{
     color:rgba(31, 31, 49, 1);
     font-size:10px;
-    font-weight:500;
+    font-weight:400;
     text-decoration:none;
 }
 
 .title_category{
-    width:120px;
     display:flex;
     justify-content:start;
     align-items:center;
 
+}
+
+.title_category > li{
+    list-style-type: none;
 }
 
 /*finish category description*/
@@ -404,25 +373,25 @@ body{
     color:rgba(31, 31, 49, 1);
     font-size:10px;
     font-weight:300;
-    padding:0 16px 0 0;
+    padding:0 22px 0 0;
 }
 
-.title_condition > a{
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow:ellipsis;
+.condition_value > a{
     color:rgba(31, 31, 49, 1);
     font-size:10px;
-    font-weight:500;
+    font-weight:400;
     text-decoration:none;
 }
 
 .title_condition{
-    width:120px;
     display:flex;
     justify-content:start;
     align-items:center;
 
+}
+
+.title_condition > li{
+    list-style-type: none;
 }
 
 /*finish condition description*/
@@ -434,27 +403,26 @@ body{
     color:rgba(31, 31, 49, 1);
     font-size:10px;
     font-weight:300;
-    padding:0 5px 0 0;
+    padding:0 11px 0 0;
 }
 
-.title_location > a{
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow:ellipsis;
+.location_value > a{
     color:rgba(31, 31, 49, 1);
     font-size:10px;
-    font-weight:500;
+    font-weight:400;
     text-decoration:none;
 }
 
 .title_location{
-    width:120px;
     display:flex;
     justify-content:start;
     align-items:center;
 
 }
 
+.title_location > li{
+    list-style-type: none;
+}
 
 /*finish location description*/
 
@@ -465,27 +433,26 @@ body{
     color:rgba(31, 31, 49, 1);
     font-size:10px;
     font-weight:300;
-    padding:0 5px 0 0;
+    padding:0 11px 0 0;
 }
 
-.title_date > a{
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow:ellipsis;
+.date_value > a{
     color:rgba(31, 31, 49, 1);
     font-size:10px;
-    font-weight:500;
+    font-weight:400;
     text-decoration:none;
 }
 
 .title_date{
-    white-space: nowrap;
-    width:120px;
     display:flex;
     justify-content:start;
     align-items:center;
+
 }
 
+.title_date > li{
+    list-style-type: none;
+}
 /*finish date description*/
 /*Right block finish*/
 
@@ -734,7 +701,7 @@ body{
     font-size: 36px;
     font-weight:700;
     height:42px;
-    margin-top:12px;
+    margin-top:45px;
 
 }
 .title_modal_ru_office{
@@ -801,7 +768,7 @@ body{
     margin:0 0 0 10px;
 }
 .modal__name{
-    margin:15px 321px 12px 51px;
+    margin:30px 321px 12px 51px;
     font-size:14px;
     font-weight:500;
 }
@@ -848,7 +815,7 @@ body{
 .modal .btn {
     display: block;
     width: 149px;
-    margin: 20px 53px 45px 238px;
+    margin: 29px 53px 45px 238px;
     font-size:14px;
     font-weight:500;
 }
@@ -936,7 +903,7 @@ to {
 
 .modal_message_jeff{
     width:440px;
-    height:615px;
+    height:597px;
     background-color:#fff;
     position: absolute;
     right:105px;
@@ -951,192 +918,32 @@ to {
 
 /*Modal window finish*/
 
-/* Product page start */
+/* начало описания продуктов */
 
-.right_block_for_product{
-    display:block;
-    margin-top:19px;
-    margin-left:42px;
-
-}
-
-.link_right_block_item{
-    color:rgba(196, 196, 196, 1);
-    font-weight:400;
-    font-size:14px;
-
-
-}
-.link_right_block > li{
-    display: inline-block;
-
-}
-.link_right_block_item > a{
-    text-decoration:none;
-    color:rgba(196, 196, 196, 1);
-    font-weight:400;
-    font-size:14px;
-}
-.link_right_block li+li:before {
-  padding: 8px;
-  color: rgba(196, 196, 196, 1);
-  content: "/";
+.product_image{
+    height:400px;
+    width:500px;
+    margin:30px 0 0 0 ;
 }
 
-.right_block_product{
-    display: inline-flex;
+.product_image > img{
+    width:100%;
+    height:100%;
+    object-fit: cover;
+    border-radius:11px;
 }
 
-.picture_wrapper > img{
-    width:377px;
-    height:289px;
-    margin-left:0px;
-    margin-top:35px;
-
-
-}
-.link_right_block{
-    display:flex;
-}
-.table_title_right{
-    display:inline-block;
-    margin-left:26px;
-    margin-top:35px;
-}
-
-.table_title_right > h2{
-    font-weight:700;
-    font-size:24px;
-    width:461px;
-    height:52px;
-}
-
-.table_title_right > tr {
-    display:inline;
-}
-.product_id{
-    display:flex;
-    background-color:rgba(92, 95, 171, 0.04);
-    width:461px;
-    height:41px;
-}
-.product_id > h1{
-    font-weight:400;
-    font-size:14px;
-    padding:13px 0 0 28px;
-    color:rgba(103, 96, 96, 1);
-}
-.product_id > h3{
-    font-weight:400;
-    font-size:14px;
-    padding:13px 0 0 31px;
-}
-
-.product_condition{
-    display:flex;
-    width:461px;
-    height:41px;
-}
-.product_condition > h1{
-    font-weight:400;
-    font-size:14px;
-    padding:13px 0 0 28px;
-    color:rgba(103, 96, 96, 1);
-}
-.product_condition > h3{
-    font-weight:400;
-    font-size:14px;
-    padding:13px 0 0 31px;
-}
-.product_quantity{
-    display:flex;
-    background-color:rgba(92, 95, 171, 0.04);
-    width:461px;
-    height:41px;
-}
-
-.product_quantity > h1{
-    font-weight:400;
-    font-size:14px;
-    padding:13px 0 0 28px;
-    color:rgba(103, 96, 96, 1);
-}
-.product_quantity > h3{
-    font-weight:400;
-    font-size:14px;
-    padding:13px 0 0 40px;
-}
-
-
-.product_location{
-    display:flex;
-    width:461px;
-    height:41px;
-}
-
-.product_location > h1{
-    font-weight:400;
-    font-size:14px;
-    padding:13px 0 0 28px;
-    color:rgba(103, 96, 96, 1);
-}
-.product_location > h3{
-    font-weight:400;
-    font-size:14px;
-    padding:13px 0 0 37px;
-}
-
-.product_data_posted{
-    display:flex;
-    background-color:rgba(92, 95, 171, 0.04);
-    width:461px;
-    height:41px;
-}
-.product_data_posted > h1{
-    font-weight:400;
-    font-size:14px;
-    padding:13px 0 0 28px;
-    color:rgba(103, 96, 96, 1);
-}
-.product_data_posted > h3{
-    font-weight:400;
-    font-size:14px;
-    padding:13px 0 0 16px;
-}
-
-.product_price_and_button{
-    display:flex;
-    width:461px;
-
-}
-
-
-.product_footer_button {
-    cursor:pointer;
-    width:149px;
-    height:42px;
-    border-radius:24px;
-    background:#5C5FAB;
-    border:none;
-    color:#fff;
+.product_category{
+    font-size:25px;
     font-weight:500;
-    font-size:14px;
-    margin-left:133px;
-    margin-top:35px;
+    margin:20px 0 40px 0px;
 }
-.product_price_and_button > h4{
-    color:rgba(92, 95, 171, 1);
-    font-size:24px;
-    font-weight:700;
-    margin-top:42px;
+
+.product_inf{
+    font-size:25px;
+    font-weight:300;
 }
-.price{
-    width:180px;
-    height:28px;
-}
-/* Product page finish */
-    /*-top:27px;
-    display:grid;
-    grid-template-columns:1fr 1fr 1fr;
-    grid-row-gap: 21px;
-    grid-column-gap: 5px;*/
+
+
+
+/* конец описания продуктов */
