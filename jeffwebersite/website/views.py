@@ -2,10 +2,21 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 # Create your views here.
+from website.models import Product, Category
 
 
-def homepage(request):
-    context = {}
+def homepage(request, pk=None):
+    if pk:
+        category = Category.objects.get(pk=pk)
+        products = Product.objects.filter(category=category)
+    else:
+        products = Product.objects.all()
+
+    categories = Category.objects.all()
+    context = {
+        'products': products,
+        'categories': categories,
+    }
     return render(request, 'homepage.html', context)
 
 
@@ -13,11 +24,13 @@ def blockswivels(request):
     context = {
         'name':'Blocks & Swivels',
     }
-    return render(request, 'blockswivels.html',context)
+    return render(request, 'blockswivels.html', context)
 
 
-def product(request):
+def product(request, pk):
+    current_product = Product.objects.get(pk=pk)
     context = {
+         'product': current_product,
     }
     return render(request, 'product.html', context)
 
