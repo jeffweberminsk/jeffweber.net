@@ -23,6 +23,7 @@ class Product (models.Model):
     data_posted = models.DateField(auto_now=False)
     price = models.TextField(max_length=50)
     description = models.TextField(max_length=10000)
+    image = models.ImageField(upload_to='media/product_images')
 
     def __str__(self):
         return self.product_title
