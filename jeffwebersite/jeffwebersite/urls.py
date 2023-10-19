@@ -6,7 +6,7 @@ from jeffwebersite import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('jeffweber/', include('website.urls')),
+    path('', include('website.urls')),
 ]
 
 if settings.DEBUG:
