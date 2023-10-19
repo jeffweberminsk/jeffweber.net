@@ -13,7 +13,8 @@ def homepage(request, pk=None):
     else:
         products = Product.objects.all()
 
-    categories = Category.objects.all()
+    categories = Category.objects.all().order_by('name')
+
     context['categories'] = categories
 
     if request.method == 'POST':
