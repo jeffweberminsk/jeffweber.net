@@ -7,6 +7,7 @@ from website.models import Product, Category
 
 def homepage(request, pk=None):
     context = {}
+
     if pk:
         category = Category.objects.get(pk=pk)
         products = Product.objects.filter(category=category)
