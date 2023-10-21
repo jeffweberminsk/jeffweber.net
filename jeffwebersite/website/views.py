@@ -43,8 +43,12 @@ def product(request, pk):
     current_product = Product.objects.get(pk=pk)
     context = {
         'product': current_product,
-
     }
+    products = Product.objects.all()
+
+    categories = Category.objects.all().order_by('name')
+
+    context['categories'] = categories
     return render(request, 'product.html', context)
 
 
