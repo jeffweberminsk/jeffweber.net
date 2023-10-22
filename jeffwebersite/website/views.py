@@ -24,8 +24,9 @@ def homepage(request, pk=None):
 
         q_title = Q(product_title__icontains=search_term)
         q_description = Q(description__icontains=search_term)
+        q_id = Q(id__icontains=search_term)
 
-        q_combined = q_title | q_description
+        q_combined = q_title | q_description | q_id
         print(q_combined)
         results = Product.objects.filter(q_combined)
 
