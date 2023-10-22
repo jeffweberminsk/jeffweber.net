@@ -38,7 +38,6 @@ def homepage(request, pk=None):
     return render(request, 'homepage.html', context)
 
 
-
 def product(request, pk):
     current_product = Product.objects.get(pk=pk)
     context = {
