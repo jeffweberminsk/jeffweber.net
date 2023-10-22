@@ -20,14 +20,12 @@ def homepage(request, pk=None):
 
     if request.method == 'POST':
         search_term = request.POST.get('search', '')
-        print(search_term)
 
         q_title = Q(product_title__icontains=search_term)
         q_description = Q(description__icontains=search_term)
         q_id = Q(id__icontains=search_term)
 
         q_combined = q_title | q_description | q_id
-        print(q_combined)
         results = Product.objects.filter(q_combined)
 
         context['products'] = results
@@ -35,7 +33,6 @@ def homepage(request, pk=None):
     else:
         context['products'] = products
 
-    print(context['products'])
     return render(request, 'homepage.html', context)
 
 
