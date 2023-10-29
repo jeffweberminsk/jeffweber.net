@@ -183,6 +183,7 @@ body{
     color:rgba(0,0,0,0.5);
 }
 
+
 .search_button{
     position:relative;
     width:40px;
@@ -273,10 +274,19 @@ body{
 }
 
 .card_image > img{
-    width:100%;
-    height:100%;
+    height:165px;
+    width:287px;
     object-fit: cover;
     border-radius:11px;
+}
+
+.noimage{
+    padding-top: 30px;
+    text-align: center;
+    margin: auto;
+    font-size: 40px;
+    opacity: 0.3;
+    display: none;
 }
 
 .right_wrapper{

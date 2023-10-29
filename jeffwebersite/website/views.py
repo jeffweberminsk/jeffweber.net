@@ -1,6 +1,5 @@
 from django.db.models import Q
 from django.shortcuts import render
-from django.views.generic import ListView
 
 from website.models import Product, Category
 
@@ -22,10 +21,9 @@ def homepage(request, pk=None):
         search_term = request.POST.get('search', '')
 
         q_title = Q(product_title__icontains=search_term)
-        q_description = Q(description__icontains=search_term)
         q_id = Q(id__icontains=search_term)
 
-        q_combined = q_title | q_description | q_id
+        q_combined = q_title | q_id
         results = Product.objects.filter(q_combined)
 
         context['products'] = results

@@ -76,18 +76,22 @@
                     </div>
                     <div class="right_wrapper">
 
+
                         {% for product in products %}
                             <div class="card">
                                 <div class="card_image">
-                                    <img src="/media/{{ product.image }}" alt="picture">
+                                    <img src="/media/{{ product.image }}" onerror="this.onerror='null'; this.style='display:none'; noneid{{ product.id }}.style='display:block'">
+                                    <p id="noneid{{ product.id }}" class="noimage">NO IMAGE
+                                        AVALIBLE
+                                    </p>
                                 </div>
                                 <div class="card_descr">
                                     <div class="card_title">{{ product.product_title }}</div>
                                     <div class="card_subtitle">
                                         <div class="title_category">
-                                            <h1>Сategory:</h1>
+                                            <h1>Listing id:</h1>
                                             <li class="category_value">
-                                                <a href="#!" >{{ product.category }}</a>
+                                                <a href="#!" >{{ product.id }}</a>
                                             </li>
                                         </div>
                                         <div class="title_condition">
@@ -99,7 +103,7 @@
                                         <div class="title_location">
                                             <h1>Location:</h1>
                                             <li class="location_value">
-                                                <a href="#!" >{{ product.quantity }}</a>
+                                                <a href="#!" >{{ product.location }}</a>
                                             </li>
                                         </div>
                                         <div class="title_date">
